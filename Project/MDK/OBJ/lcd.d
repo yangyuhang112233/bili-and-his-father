@@ -1,0 +1,13 @@
+.\obj\lcd.o: ..\..\Libraries\devices\src\lcd.c
+.\obj\lcd.o: ..\..\Libraries\devices\inc\lcd.h
+.\obj\lcd.o: ..\..\Libraries\drivers\inc\common.h
+.\obj\lcd.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\lcd.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\obj\lcd.o: C:\Keil\ARM\ARMCC\bin\..\include\stddef.h
+.\obj\lcd.o: ..\..\Libraries\startup\DeviceSupport\MK60D10.h
+.\obj\lcd.o: ..\..\Libraries\startup\CoreSupport\core_cm4.h
+.\obj\lcd.o: ..\..\Libraries\startup\CoreSupport\core_cmInstr.h
+.\obj\lcd.o: ..\..\Libraries\startup\CoreSupport\core_cmFunc.h
+.\obj\lcd.o: ..\..\Libraries\startup\CoreSupport\core_cm4_simd.h
+.\obj\lcd.o: ..\..\Libraries\startup\DeviceSupport\system_MK60D10.h
+.\obj\lcd.o: ..\..\Libraries\drivers\inc\gpio.h
