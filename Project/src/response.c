@@ -6,6 +6,8 @@
 
 //每个函数改变speedx和anglex两个量
 
+//写一个函数，在跑完后通过led屏集中看状态转化
+
     //没有找到信标时的动作
   void lookfor()
  {
@@ -18,7 +20,8 @@
    if(forestate==3)
 {
    
-            switch(turn[count11[3]])
+    
+            switch(turn[count11[3]]) 
       {
          case 1:
              
@@ -33,13 +36,28 @@
         // if()  //判断是否反向大转
              anglex=angleleft;         
                
+//         if(count1==)
+//         反向大转
+         
              break; 
          case 4:
-              // if()  //判断是否反向大转
+         
              anglex=angleright;               
-         break;               
-     }
+         break;  
 
+//          case 5:
+//             
+//        //反向大转
+//             anglex=angleright;         
+//               
+//             break; 
+//         case 6:
+//             //反向大转
+//             anglex=angleleft;            
+//         break;   
+         
+     }
+     
        
 }          
        
@@ -60,7 +78,7 @@
         
        
       } 
-         else
+         else  //可以让打角比极限值小
       {   
            if(anglex>anglemid)
            {  
@@ -113,9 +131,9 @@
  
  if(barrier==1)  
  {          
- if(barrier_l<160) 
+ if(barrier_l<160) //需要避障左转
   {
-      if(anglex<hide_left)
+      if(anglex<hide_left) //如果原先打角比避障左转打角还要靠左，那么不需要改变打角
       {     
       
             anglex=hide_left;         
@@ -144,8 +162,13 @@
 //舵机中值543  右极限465  左极限620
   void gothere()
   {
+          
        //计算边缘经过的偏差
       piancha();
+      
+      
+      //动态设置加减速距离
+     // jiajiansujuli();
       
 //       //加一个根据行坐边重新赋值cammid的函数
 //      if(target_h>65)cammid=153;
@@ -176,12 +199,21 @@
          break;
                 
    }
+
+   
+      uint16_t avespeed;
+      avespeed=(qd_left_value+qd_right_value)/2;
   
+   if(turn[count1]==3||turn[count1]==4)
+ {
       //若舵机打角小，迅速加速减速
      if(anglex>acc_right&&anglex<acc_left)
      {
+         //根据信标看到时的行坐标设置加减速行坐标
+                     
+                    
             //控制加速减速过程 
-        if(target_h>acc_stop) 
+        if(target_h>acc_stop1+avespeed/1.2) 
         {
             speedx=speedjiasu;          
         }	
@@ -194,11 +226,10 @@
               //第一次设定速度值时根据进入信标避障时的速度设定速度是加速还是减速
               if(speedx!=speedxinjiansu&&speedx!=speedxinjia)
               {
-                    uint16_t avespeed;
-                    avespeed=(qd_left_value+qd_right_value)/2;
+                    
                   
                   
-                    if(avespeed>13)
+                    if(avespeed>15)
                     {
                       speedx=speedxinjiansu;     
                     }
@@ -214,8 +245,61 @@
       //若舵机打角大，在低速下调整正方向
      else
      {
-     speedx=speedzhuanwan;
+         if(avespeed>25)speedx=speedzhuanwan;
+         else
+             speedx=speedzhuanwan2;
      }
+  }
+ 
+  else
+  {
+   if(anglex>acc_right&&anglex<acc_left)
+     {
+         //根据信标看到时的行坐标设置加减速行坐标
+                     
+                    
+            //控制加速减速过程 
+        if(target_h>acc_stop2+avespeed/k12) 
+        {
+            speedx=speedjiasu2;          
+        }	
+
+      //前往信标位置的减速段    如果速度很慢，则改变设定速度为加速        
+          else
+          {   
+              
+             //在第一次进入此处时设定速度值，之后在这个函数处设定值不变。
+              //第一次设定速度值时根据进入信标避障时的速度设定速度是加速还是减速
+              if(speedx!=speedxinjiansu&&speedx!=speedxinjia)
+              {
+                    
+                  
+                  
+                    if(avespeed>15)
+                    {
+                      speedx=speedxinjiansu2;     
+                    }
+                    else
+                    {
+                      speedx=speedxinjia2;   
+                    }
+              
+              }
+          }
+      }
+     
+      //若舵机打角大，在低速下调整正方向
+     else
+     {
+         if(avespeed>25)speedx=speedzhuanwan;
+         else
+             speedx=speedzhuanwan2;
+     }
+  
+  
+  
+  
+  }
 
  }
 
@@ -252,7 +336,7 @@
         anglex=anglemid-1;
                 if(target_h<16) 
       {     
-       anglex=anglemid-2;
+       anglex=anglemid-6;
       }
      }
        
@@ -261,7 +345,7 @@
         anglex=anglemid+1;
                 if(target_h<16) 
       {     
-       anglex=anglemid+2;
+       anglex=anglemid+6;
       }
      }
      
@@ -310,7 +394,9 @@
       a=115;b=11374;  //11332
       }
 
- deviation=(b-a*target_h)/100;
+      //可以乘一个比例系数，在乘比例系数的情况下满足了线性增大，同时满足曲线依然相连接
+      
+      deviation=pianchak*(b-a*target_h)/100;
      
  }
  
@@ -330,7 +416,8 @@
                   anglex=hide2_right;
           
                 }		
-               else
+              
+            if(turn[count1]==1)
                 {
                  anglex=hide2_left;             
                 }

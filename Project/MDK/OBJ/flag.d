@@ -1,11 +1,11 @@
 .\obj\flag.o: ..\src\flag.c
 .\obj\flag.o: ..\src\head.h
 .\obj\flag.o: ..\src\canshu.h
-.\obj\flag.o: H:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
-.\obj\flag.o: H:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\obj\flag.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\flag.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\obj\flag.o: ..\..\Libraries\drivers\inc\gpio.h
 .\obj\flag.o: ..\..\Libraries\drivers\inc\common.h
-.\obj\flag.o: H:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\obj\flag.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\obj\flag.o: ..\..\Libraries\startup\DeviceSupport\MK60D10.h
 .\obj\flag.o: ..\..\Libraries\startup\CoreSupport\core_cm4.h
 .\obj\flag.o: ..\..\Libraries\startup\CoreSupport\core_cmInstr.h
@@ -43,5 +43,5 @@
 .\obj\flag.o: ..\src\response.h
 .\obj\flag.o: ..\src\pid.h
 .\obj\flag.o: ..\src\flag.h
-.\obj\flag.o: H:\keil5\ARM\ARMCC\Bin\..\include\string.h
+.\obj\flag.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\flag.o: ..\src\qita.h

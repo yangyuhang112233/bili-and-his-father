@@ -1,11 +1,11 @@
 .\obj\getready.o: ..\src\getready.c
 .\obj\getready.o: ..\src\head.h
 .\obj\getready.o: ..\src\canshu.h
-.\obj\getready.o: H:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
-.\obj\getready.o: H:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\obj\getready.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\getready.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\obj\getready.o: ..\..\Libraries\drivers\inc\gpio.h
 .\obj\getready.o: ..\..\Libraries\drivers\inc\common.h
-.\obj\getready.o: H:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\obj\getready.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\obj\getready.o: ..\..\Libraries\startup\DeviceSupport\MK60D10.h
 .\obj\getready.o: ..\..\Libraries\startup\CoreSupport\core_cm4.h
 .\obj\getready.o: ..\..\Libraries\startup\CoreSupport\core_cmInstr.h
@@ -43,5 +43,5 @@
 .\obj\getready.o: ..\src\response.h
 .\obj\getready.o: ..\src\pid.h
 .\obj\getready.o: ..\src\flag.h
-.\obj\getready.o: H:\keil5\ARM\ARMCC\Bin\..\include\string.h
+.\obj\getready.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\getready.o: ..\src\qita.h

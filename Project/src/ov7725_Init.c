@@ -16,7 +16,7 @@ extern uint32_t QDVALUE_GETFINSH;        //编码器测速状态
 uint8_t CCDBufferPool[OV7725_H*(OV7725_W/8)]; 
 
 uint8_t img[OV7725_H*OV7725_W]={1};
-uint8_t img22[OV7725_H*OV7725_W]={1};
+
 int8_t center[OV7725_H];
 
 /* 摄像头数据指针*/

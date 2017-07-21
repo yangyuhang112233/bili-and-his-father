@@ -1,10 +1,10 @@
 .\obj\ov7725_init.o: ..\src\ov7725_Init.c
 .\obj\ov7725_init.o: ..\src\ov7725_Init.h
-.\obj\ov7725_init.o: H:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\ov7725_init.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\obj\ov7725_init.o: ..\..\Libraries\drivers\inc\lptmr.h
-.\obj\ov7725_init.o: H:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\obj\ov7725_init.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\obj\ov7725_init.o: ..\..\Libraries\drivers\inc\common.h
-.\obj\ov7725_init.o: H:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\obj\ov7725_init.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\obj\ov7725_init.o: ..\..\Libraries\startup\DeviceSupport\MK60D10.h
 .\obj\ov7725_init.o: ..\..\Libraries\startup\CoreSupport\core_cm4.h
 .\obj\ov7725_init.o: ..\..\Libraries\startup\CoreSupport\core_cmInstr.h

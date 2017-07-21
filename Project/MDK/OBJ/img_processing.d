@@ -1,11 +1,11 @@
 .\obj\img_processing.o: ..\src\img_processing.c
 .\obj\img_processing.o: ..\src\head.h
 .\obj\img_processing.o: ..\src\canshu.h
-.\obj\img_processing.o: H:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
-.\obj\img_processing.o: H:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\obj\img_processing.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\img_processing.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\obj\img_processing.o: ..\..\Libraries\drivers\inc\gpio.h
 .\obj\img_processing.o: ..\..\Libraries\drivers\inc\common.h
-.\obj\img_processing.o: H:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\obj\img_processing.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\obj\img_processing.o: ..\..\Libraries\startup\DeviceSupport\MK60D10.h
 .\obj\img_processing.o: ..\..\Libraries\startup\CoreSupport\core_cm4.h
 .\obj\img_processing.o: ..\..\Libraries\startup\CoreSupport\core_cmInstr.h
@@ -43,5 +43,5 @@
 .\obj\img_processing.o: ..\src\response.h
 .\obj\img_processing.o: ..\src\pid.h
 .\obj\img_processing.o: ..\src\flag.h
-.\obj\img_processing.o: H:\keil5\ARM\ARMCC\Bin\..\include\string.h
+.\obj\img_processing.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\img_processing.o: ..\src\qita.h

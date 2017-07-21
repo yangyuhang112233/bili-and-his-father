@@ -2,9 +2,9 @@
 .\obj\ov7620_back.o: ..\src\ov7620_back.h
 .\obj\ov7620_back.o: ..\..\Libraries\drivers\inc\gpio.h
 .\obj\ov7620_back.o: ..\..\Libraries\drivers\inc\common.h
-.\obj\ov7620_back.o: H:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
-.\obj\ov7620_back.o: H:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
-.\obj\ov7620_back.o: H:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\obj\ov7620_back.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\ov7620_back.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\obj\ov7620_back.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\obj\ov7620_back.o: ..\..\Libraries\startup\DeviceSupport\MK60D10.h
 .\obj\ov7620_back.o: ..\..\Libraries\startup\CoreSupport\core_cm4.h
 .\obj\ov7620_back.o: ..\..\Libraries\startup\CoreSupport\core_cmInstr.h
@@ -43,5 +43,5 @@
 .\obj\ov7620_back.o: ..\src\response.h
 .\obj\ov7620_back.o: ..\src\pid.h
 .\obj\ov7620_back.o: ..\src\flag.h
-.\obj\ov7620_back.o: H:\keil5\ARM\ARMCC\Bin\..\include\string.h
+.\obj\ov7620_back.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\ov7620_back.o: ..\src\qita.h

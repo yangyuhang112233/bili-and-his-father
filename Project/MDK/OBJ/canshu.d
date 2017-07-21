@@ -1,11 +1,11 @@
 .\obj\canshu.o: ..\src\canshu.c
 .\obj\canshu.o: ..\src\head.h
 .\obj\canshu.o: ..\src\canshu.h
-.\obj\canshu.o: H:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
-.\obj\canshu.o: H:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\obj\canshu.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\canshu.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\obj\canshu.o: ..\..\Libraries\drivers\inc\gpio.h
 .\obj\canshu.o: ..\..\Libraries\drivers\inc\common.h
-.\obj\canshu.o: H:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\obj\canshu.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\obj\canshu.o: ..\..\Libraries\startup\DeviceSupport\MK60D10.h
 .\obj\canshu.o: ..\..\Libraries\startup\CoreSupport\core_cm4.h
 .\obj\canshu.o: ..\..\Libraries\startup\CoreSupport\core_cmInstr.h
@@ -43,5 +43,5 @@
 .\obj\canshu.o: ..\src\response.h
 .\obj\canshu.o: ..\src\pid.h
 .\obj\canshu.o: ..\src\flag.h
-.\obj\canshu.o: H:\keil5\ARM\ARMCC\Bin\..\include\string.h
+.\obj\canshu.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\canshu.o: ..\src\qita.h

@@ -19,9 +19,11 @@
 //#define  speedxinbijia      15   //信标避障时太慢，则加速
 //20 34 26 15 10 10  老电池
 //27 40 18 22 7 9
-
+extern    uint8_t speedxinjia2;          //靠近信标 速度太慢 而加速
+extern    uint8_t speedxinjiansu2;        //靠近信标 进行减速
+ extern   uint8_t speedjiasu2;            //远离信标 直线加速
 extern uint8_t  kaiqi;
-
+extern uint8_t speedzhuanwan2;
 extern uint8_t  xideng;
 extern uint8_t speedzhuanwan;
 extern uint8_t speedjiasu;
@@ -29,9 +31,9 @@ extern uint8_t speedxinjiansu;
 extern uint8_t speedxinjia;
 extern uint8_t speeddazhuan;
 extern uint8_t speedbizhang;
-extern uint8_t speedxinbi1;
+extern int8_t speedxinbi1;
 //extern uint8_t speedxinbijia;
-extern uint8_t speedxinbi2;
+extern int8_t speedxinbi2;
 extern uint8_t jioushu;
 extern uint16_t foreangle;
 extern  uint16_t cammid;
@@ -53,13 +55,15 @@ extern uint16_t anglenow;//舵机实际打角
 extern uint8_t count1;//判断经过了第几个信标灯
 extern bool seepoint;//判断是否在避障后找不到信标
 extern bool xinbiaobizhang;//信标避障标志位
-
+extern float k11;
+extern float k12;
 extern uint8_t turn[20];
 extern uint16_t xiangsuzh;
-
+extern uint16_t acc_stop2;//加速结束时的行坐标
+extern uint16_t acc_stop1;
 extern uint16_t speedx;//速度
 extern uint16_t anglex;//角度
-
+extern int c;
 extern uint8_t barrier2_h;//障碍物目标行
 extern uint8_t barrier2_l;//障碍物目标列
 
@@ -70,6 +74,8 @@ extern float anglek;//打角系数
 extern uint16_t count7725;//7725采集像素值
 
 extern uint8_t state;//状态标志位
+
+extern float pianchak;//偏差计算系数
 
 extern uint8_t xiangsuzhi;
 extern uint16_t door7620;//7620摄像头阀值

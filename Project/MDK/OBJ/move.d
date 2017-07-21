@@ -1,11 +1,11 @@
 .\obj\move.o: ..\src\move.c
 .\obj\move.o: ..\src\head.h
 .\obj\move.o: ..\src\canshu.h
-.\obj\move.o: H:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
-.\obj\move.o: H:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\obj\move.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\move.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\obj\move.o: ..\..\Libraries\drivers\inc\gpio.h
 .\obj\move.o: ..\..\Libraries\drivers\inc\common.h
-.\obj\move.o: H:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\obj\move.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\obj\move.o: ..\..\Libraries\startup\DeviceSupport\MK60D10.h
 .\obj\move.o: ..\..\Libraries\startup\CoreSupport\core_cm4.h
 .\obj\move.o: ..\..\Libraries\startup\CoreSupport\core_cmInstr.h
@@ -43,5 +43,5 @@
 .\obj\move.o: ..\src\response.h
 .\obj\move.o: ..\src\pid.h
 .\obj\move.o: ..\src\flag.h
-.\obj\move.o: H:\keil5\ARM\ARMCC\Bin\..\include\string.h
+.\obj\move.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\move.o: ..\src\qita.h

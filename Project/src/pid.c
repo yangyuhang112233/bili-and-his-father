@@ -9,8 +9,9 @@
 	static uint16_t dooracc;
     static uint16_t doorslow;
     static int16_t Kp;
-    static int16_t Ki;
-  
+    static int16_t Kil;
+    static int16_t Kir;
+    
     static int16_t leftsum ;
     static int16_t rightsum ;
     
@@ -58,6 +59,7 @@ void Motor_Control(uint16_t leftspeed,uint16_t rightspeed)
     
       uint16_t avespeed; //当前速度
   
+    float k1=1;//积分计算的系数
     
       //状态判断以及参数赋值：  
      avespeed=(qd_left_value+qd_right_value)/2;
@@ -82,52 +84,126 @@ cha=speedx-avespeed;
 //     if(cha>5)
 //{        
 //}   
+       if(Kp==0)  
+   {
+       Kp= 400;
+             
+       Kir= 0;
+       Kil= 0;
+       
+       leftsum=2000;
+       rightsum=2000;
+   }
+
+
         if(state!=forestate)
         {
            switch(state)
               {
                 case 0://找不到信标，转一转来找到信标
-                Kp= 600;Ki= 1;
-               leftsum=1000;
-                rightsum=1000;
+               Kp= 600;
                 
+                Kir= 0;
+                Kil= 0;
+                
+               leftsum=1000;
+               rightsum=1000;
+                 
+               
+                
+               if(forestate==3)
+          {
+              k1=1;
+              Kp= 600;
+            
+           
+                if(leftspeed>rightspeed)
+                {
+               Kil= 2;
+               Kir= 0;
+                    
+                leftsum=800;
+                rightsum=0;
+                }
+              else
+               {
+                   Kil= 0;
+                    Kir= 2;
+              
+                   
+                   
+                leftsum=0;
+                rightsum=800;               
+              } 
+          }
+       
                 break;
  
                 
                 case 1://找到信标的状态，遇到前方有障碍物，进行避障
-                Kp= 1000;Ki= 0;
-              
+                Kp= 1000;
+                
+                
+                Kir= 0;
+                Kil= 0;
+                k1=1;
                 break;
                 
                 case 2://找到信标的状态，前方没有障碍物，前往信标位置
+                k1=1;    
+                
                 if(speedx==speedjiasu) 
-                {Kp= 800;Ki= 2;
-                leftsum=2000;
-                rightsum=2000;
+                {Kp= 800;
+                    
+                    
+                Kir= 2;
+                Kil= 2;
+                    
+                leftsum=800;
+                rightsum=800;
                 }
                 
                 if(speedx==speedxinjia)
-                {Kp=500;Ki=1;  
-                leftsum=1000;
-                rightsum=1000;
+                {Kp=500;
+                    
+                Kir= 1;
+                Kil= 1;
+                    
+                leftsum=800;
+                rightsum=800;
                 }
                 
                 if(speedx==speedxinjiansu)
-                {Kp=1300;Ki=0;}
+                {Kp=1300;
+               
+                Kir= 0;
+                Kil= 0;
+                
+                }
                 
                 
                                        
                 break;
                 
                case 3://靠近信标进行信标避障
-                   
+                k1=1;   
                if(qd_left_value+qd_left_value>22)
-               { Kp= 1500;Ki= 1;}
+               { Kp= 1500;
+               
+               
+                Kir= 0;
+                Kil= 0;
+               
+               }
                else
                {
-                Kp= 600;Ki= 3;
-                leftsum=1300;
-                rightsum=1300;
+                Kp= 600;
+                   
+                Kir= 3;
+                Kil= 3;
+                   
+                leftsum=800;
+                rightsum=800;
                }
                                       
                break;
@@ -153,7 +229,7 @@ cha=speedx-avespeed;
       righterror= rightspeed - qd_right_value ;	
 		
 	  leftsum+= lefterror ;//积分调节的积分量
-      rightsum  += righterror ;
+      rightsum  +=righterror ;
        
        
 	  if(leftsum >= 800)leftsum = 800;
@@ -161,8 +237,8 @@ cha=speedx-avespeed;
 	  if(rightsum  >= 800) rightsum  = 800;
 	  if(rightsum  <= -400)rightsum  = -400;
             
-      pwm_out1 =   Kp*lefterror + Ki*leftsum  ;
-	  pwm_out2 =   Kp*righterror + Ki*rightsum   ;
+      pwm_out1 =   Kp*lefterror + Kil*leftsum  ;
+	  pwm_out2 =   Kp*righterror + Kir*rightsum   ;
 
 	  	
 	  

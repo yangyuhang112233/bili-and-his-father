@@ -1136,12 +1136,13 @@ ARM Macro Assembler    Page 18
   772 0000001C                 END
               00000000 
               00000000 
-Command Line: --debug --xref --cpu=Cortex-M4 --apcs=interwork --depend=.\obj\st
-artup_mk60d10.d -o.\obj\startup_mk60d10.o -ID:\小车代码\改代码3\6.11\Project\MD
-K\RTE -IH:\keil5\ARM\PACK\Keil\Kinetis_K60_DFP\1.2.0\Device\Include -IH:\keil5\
-ARM\CMSIS\Include --predefine="__MICROLIB SETA 1" --predefine="MK60DN512xxx10 S
-ETA 1" --list=.\startup_mk60d10.lst ..\..\Libraries\startup\DeviceSupport\MDK-A
-RM\startup_MK60D10.s
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4 --apcs=interw
+ork --depend=.\obj\startup_mk60d10.d -o.\obj\startup_mk60d10.o -I.\RTE\_mk60d10
+ -I"D:\Program Files\Keil_v5\ARM\PACK\Keil\Kinetis_K60_DFP\1.2.0\Device\Include
+" -I"D:\Program Files\Keil_v5\ARM\CMSIS\Include" --predefine="__MICROLIB SETA 1
+" --predefine="__UVISION_VERSION SETA 523" --predefine="MK60DN512xxx10 SETA 1" 
+--list=.\startup_mk60d10.lst ..\..\Libraries\startup\DeviceSupport\MDK-ARM\star
+tup_MK60D10.s
 
 
 
@@ -3431,4 +3432,4 @@ _MK60D10.s
 _MK60D10.s
 Comment: __main used once
 2 symbols
-493 symbols in table
+494 symbols in table

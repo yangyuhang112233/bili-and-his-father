@@ -1,9 +1,9 @@
 .\obj\drv_lcd.o: ..\..\Libraries\devices\src\Drv_LCD.c
 .\obj\drv_lcd.o: ..\..\Libraries\devices\inc\Drv_LCD.h
-.\obj\drv_lcd.o: H:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\drv_lcd.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\obj\drv_lcd.o: ..\..\Libraries\drivers\inc\common.h
-.\obj\drv_lcd.o: H:\keil5\ARM\ARMCC\Bin\..\include\stdbool.h
-.\obj\drv_lcd.o: H:\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+.\obj\drv_lcd.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\obj\drv_lcd.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\obj\drv_lcd.o: ..\..\Libraries\startup\DeviceSupport\MK60D10.h
 .\obj\drv_lcd.o: ..\..\Libraries\startup\CoreSupport\core_cm4.h
 .\obj\drv_lcd.o: ..\..\Libraries\startup\CoreSupport\core_cmInstr.h
@@ -44,8 +44,8 @@
 .\obj\drv_lcd.o: ..\src\response.h
 .\obj\drv_lcd.o: ..\src\pid.h
 .\obj\drv_lcd.o: ..\src\flag.h
-.\obj\drv_lcd.o: H:\keil5\ARM\ARMCC\Bin\..\include\string.h
+.\obj\drv_lcd.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\drv_lcd.o: ..\src\qita.h
-.\obj\drv_lcd.o: H:\keil5\ARM\ARMCC\Bin\..\include\stdarg.h
-.\obj\drv_lcd.o: H:\keil5\ARM\ARMCC\Bin\..\include\stdio.h
+.\obj\drv_lcd.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\obj\drv_lcd.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\obj\drv_lcd.o: ..\..\Libraries\devices\inc\SimSun6x12.h

@@ -9,13 +9,16 @@
       //¶æ»ú´ò½Ç¿ØÖÆ
       Servo_Control();
      
+    static bool ab=0;
     
        //·ÀÖ¹ËÙ¶È¹ıµÍ
-             if(qd_left_value+qd_right_value<20)
+       if(target_h<50)
+     {
+            if(qd_left_value+qd_right_value<24)
           {
           speedx=15;
           }
-    
+      }
       //¸ù¾İ¶æ»ú´ò½ÇÉèÖÃ×óÓÒÁ½¸öÂÖ×ÓµÄ×ªËÙ£¬²¢µ÷ÓÃpidÊµÏÖ×óÓÒÂÖ×ªËÙ
     
     //float proportion[5]={1.41,1.36,1.28,1.24,1.19};//²îËÙ±ÈÀ
@@ -50,26 +53,114 @@
          }
        } 
        
+        if(state==0)
+        {
+            if(ab==0)
+            {
+                if(forestate==3||forestate==4)
+              {
+                  //ÓÃ´ò½ÇÀ´ÅĞ¶Ï
+                 if(leftspeed>rightspeed)
+                {
+                  Motor_Control(25,3);
+                }
+                 else
+                { 
+                  Motor_Control(3,25);      
+                }     
+               }
+            else
+            {
+                 if(leftspeed>rightspeed)
+                {
+                  Motor_Control(18,16);
+                }
+                 else
+                {
+                  Motor_Control(16,18);     
+                 }
+             }
+            ab=1;
+         }
+        
+        }
+        else
+        {
+         Motor_Control(leftspeed,rightspeed);//ÉÏÃæÊÇËÙ¶ÈÑ¡Ôñ£¬ÕâÀïÊÇËÙ¶ÈÊµÏÖ
+         ab=0;
+        }
        
-             if(state==0)
-{
-       if(leftspeed>rightspeed)
-       {
-        Motor_Control(18,1);
-       }
-       else
-       {
-       Motor_Control(1,18);
-       
-       }         
-}
-       else
-       {
-        Motor_Control(leftspeed,rightspeed);//ÉÏÃæÊÇËÙ¶ÈÑ¡Ôñ£¬ÕâÀïÊÇËÙ¶ÈÊµÏÖ
+   
+        
+//       if(ab==0)
+//{
+//    
+//             if((state==0&&forestate==3)||(state==0&&forestate==4))
+//    {
+//       if(leftspeed>rightspeed)
+//       {
+//        Motor_Control(25,3);
+//       }
+//       else
+//       {
+//       Motor_Control(3,25);      
+//       }     
+//      ab=1;       
+//    }
+////          else if(state==0&&forestate==4)
+////    {
+////       if(leftspeed>rightspeed)
+////       {
+////        Motor_Control(25,3);
+////       }
+////       else
+////       {
+////       Motor_Control(3,25);      
+////       }    
+////      a=1;           
+////    }
+//       else if(state==0)
+//    {
+//            if(leftspeed>rightspeed)
+//        {
+//         Motor_Control(18,16);
+//        }
+//        else
+//        {
+//        Motor_Control(16,18);     
+//        }
+//        ab=1;    
+//    }
+//      else       
+//        {
+//        Motor_Control(leftspeed,rightspeed);//ÉÏÃæÊÇËÙ¶ÈÑ¡Ôñ£¬ÕâÀïÊÇËÙ¶ÈÊµÏÖ
+//        ab=0;
+//       }  
+//        
+//}
+//else
+//{
+//   if(state!=0)
+//   {
+//       ab=0;
+//   }
+//}
+ 
+//       
+//                  if(state==0)
+//{
+//       if(leftspeed>rightspeed)
+//       {
+//        Motor_Control(18,1);
+//       }
+//       else
+//       {
+//       Motor_Control(1,18);
+//       
+//       }         
+//}
      
-       }
-       
-       
+      
        //ËÙ¶È¿ØÖÆÖ»ÔÚÕâÀïºÍÏÂ±ßÊµÏÖ
       //  Motor_Control(leftspeed,rightspeed);//ÉÏÃæÊÇËÙ¶ÈÑ¡Ôñ£¬ÕâÀïÊÇËÙ¶ÈÊµÏÖ
      

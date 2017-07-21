@@ -140,11 +140,11 @@ else
   
 
   
-      if(count1==10)count1=0;
+      if(count1==20)count1=0;
    
    
          //停止运动
-      if(xidengshu==20)   
+      if(xidengshu==13)   
       {        
        stopmove();
       }  
@@ -193,7 +193,38 @@ else
 //     
 //      
 //      }
-                       
+        
+
+void jiajiansujuli()//根据第一次看到信标时信标的行坐标设置
+{
+    
+             static bool biaozhi23=0;//信标检测滞回比较器标志位
+  
+              if(target_flag==1&&biaozhi23==0)
+           {         
+               if(anglex>acc_right&&anglex<acc_left)
+               {
+                    
+            //   acc_stop =target_h;  
+                                   
+                 biaozhi23=1;           
+                    
+               }
+           }                            
+          else if(target_flag==0)
+          {
+           biaozhi23=0;
+          }
+          
+          if(forestate==1&&state!=1) //如果有避障操作，那么避障后重新计算加减速距离
+          {
+                 
+          biaozhi23=0;
+          }
+          
+
+}
+
 
   //储存前一个状态的变量
 void prestate()

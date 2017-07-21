@@ -64,32 +64,61 @@ else
 
      xinbiaoxiangsu=count;
 
-     //判断是否停止普通避障
-     stopba=0;
-
-     
+      //判断是否停止普通避障
+      stopba=0;
+        
+                                                  
      //根据count1值确定是切过还是避障，确定避障行坐标阀值   根据信标横坐标和速度判断是否进行信标避障 
-
+      uint8_t xinbiaobizhang_hh;
+          
+      static bool a=0;
+      avespeed=(qd_left_value+qd_right_value)/2;
+     
+          
+     if(avespeed<32)
+     {         
+     //避障行坐标 低速好用
+     xinbiaobizhang_h=24;//信标避障行坐标   
+     k11=1;
+     }
+     else
+     {
+      //快速好用
+      xinbiaobizhang_h=32;//信标避障行坐标   
+      k11=1.15;
+     }
+          
+          
+          
+    //进入信标避障后速度会变化，计算的避障行坐标也会变化。只能采用第一次计算的信标避障行坐标
+      if(a==0)
+    {
+        
       xinbiaobizhang=0;
       xinbiaoqieguo=0;
-               
+        
             if(turn[count1]==1||turn[count1]==2)
           {
-                if(target_h<xinbiaobizhang_h)
+                xinbiaobizhang_hh=c+xinbiaobizhang_h+avespeed/k11;         
+                if(target_h<xinbiaobizhang_hh)
                {
-                  xinbiaobizhang=1;
-               }                            
-          } 
+                  xinbiaobizhang=1;a=1;
+               }   
+              }  
+              
+         
            else
          {         
              if(target_h<xinbiaoqieguo_h)
           {
-           xinbiaoqieguo=1;
+           xinbiaoqieguo=1;a=1;
           }
          }
          
+    }
+         if(xinbiaoxiangsu<180)a=0;
          
-         
+    
 //        //之前状态切换有问题是因为这里距离阀值在变化，同时使标志位变化，让经过灯的数量误判断
 //         if(target_flag==1)
 //        {
@@ -130,11 +159,11 @@ else
      //7620避障
      uint8_t kl=0;
      
-      if(qd_left_value+qd_left_value>35)  
+      if(qd_right_value+qd_left_value>35)  
      {
      kl=10;
      }        
-     else if(qd_left_value+qd_left_value>20)
+     else if(qd_right_value+qd_left_value>20)
      {
      kl=5;
      }
@@ -274,7 +303,7 @@ else
      }
      
 
-  //设置分部分阀值  在图像的前段设置阀值比较小 后端设置阀值比较大
+//  //设置分部分阀值  在图像的前段设置阀值比较小 后端设置阀值比较大
 
 //    //7725避障    
 //    sumh = 0;
@@ -283,9 +312,7 @@ else
 //     uint16_t position;
 //     
 //     uint8_t k=0;
-//    if(jioushu==0)
-//{               
-//    
+
 //     //通过仔细观察图像发现，7725始终在两个角的位置有噪点，所以不看这部分图像
 //       //没必要这么麻烦，直接两个矩形就可以
 //         for(ii=1;ii<26;ii++)
@@ -321,36 +348,7 @@ else
 //     }
 //  //    }
 //      
-//}
-//else
-//{               
-//             for(ii=1;ii<26;ii++)
-//     {
-//				for(jj=27-ii;jj<54+ii;jj++)
-//			{
-//			       position=80*ii+jj;
-//				     if(img22[position]==0) 
-//						 {       
-//                                   sumh = sumh + ii ;
-//							       suml = suml + jj ;					
-//							         count ++;
-//						 }	
-//		  }
-//      }
-//              for(ii=26;ii<60;ii++)
-//     {
-//				for(jj=4;jj<76;jj++)
-//			{
-//                     position=80*ii+jj;
-//				     if(img22[position]==0) 
-//						 {       
-//                                   sumh = sumh + ii ;
-//							       suml = suml + jj ;					
-//							         count ++;
-//                          }
-//            }
-//     }
-//}
+
 
 //             // 行坐标和列坐标赋值
 //              barrier2_h = sumh /count ;
@@ -388,7 +386,7 @@ else
 //         
 //         barrier2=0;       
 //     }
-//     
+     
 
 }            
               

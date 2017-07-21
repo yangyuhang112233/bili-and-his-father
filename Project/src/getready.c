@@ -11,6 +11,9 @@ void PIT1_HandlerU( void )
  void getready()
  {
     
+     
+     
+     
   DelayInit();
     
     /* PTA4设置成输入，防止死机 */
@@ -70,7 +73,7 @@ void PIT1_HandlerU( void )
     
     //摄像头初始化
     OV7620_Init();
-    ov7725_Init();
+   // ov7725_Init();
 
     /* 看门狗初始化   500ms  */
 //   	WDOG_QuickInit(500);
@@ -208,6 +211,11 @@ speedbizhang=15;          //避障减速
 speedxinbi1=15;            //信标避障减速
 speedxinbi2=15;            //信标避障减速
 
+ speedxinjia2=    15;          //靠近信标 速度太慢 而加速
+ speedxinjiansu2= 15;        //靠近信标 进行减速
+ speedjiasu2=     15;            //远离信标 直线加速
+ speedxinbi2=     15;    
+
 //speedxinbijia=15;          //信标避障时太慢，则加速                
 
       break; 
@@ -271,24 +279,44 @@ default:break;
 
 void firstimage()
 {
-         //先让车停住，看到灯再开始跑
-//         while(target_flag==0)
-//        {
-//          findpoint();
-//        }
-    
-   
-     //采集第一幅图像
+   while(1)
+{
     ov7620_img_flag = OV7620_STATE_IDLE;            //空闲状态，开始采集图像
     PORTE->ISFR = ~0; //清除后置摄像头标志位 	
     enable_irq(OV7620_VSYN_GPIO_IRQ);
-   	
-     //7725摄像头采集图像  
-     ov7725_Get_Imge();
-     img_extract(img, CCDBufferPool ,OV7725_H*(OV7725_W/8));
-       
     while(ov7620_img_flag != OV7620_STATE_COMPLETE);            //等待图像采集完毕
+    
+        int count=0;
+            for(int ii=0;ii<OV7620_H-2;ii++)	
+    {     
+       for(int jj=0;jj<OV7620_W-1;jj++)
+       {
+         if(CCD_Image[ii][jj]>=door7620)
+         {   
+			 count ++;
+         }      
+       }
+  }  
+        
+     //ov7725_Get_Imge();
+     //img_extract(img, CCDBufferPool ,OV7725_H*(OV7725_W/8));
+   
+    if(count>2)break;       
 }
+
+}  
+//   
+//     //采集第一幅图像
+//    ov7620_img_flag = OV7620_STATE_IDLE;            //空闲状态，开始采集图像
+//    PORTE->ISFR = ~0; //清除后置摄像头标志位 	
+//    enable_irq(OV7620_VSYN_GPIO_IRQ);
+//   	
+//     //7725摄像头采集图像  
+//     ov7725_Get_Imge();
+//     img_extract(img, CCDBufferPool ,OV7725_H*(OV7725_W/8));
+//       
+//    while(ov7620_img_flag != OV7620_STATE_COMPLETE);            //等待图像采集完毕
+
 
 void startimage()
 {
@@ -315,9 +343,9 @@ void startimage()
    	    
    
      //7725摄像头开始采集图像
-    ov7725_img_flag = IMG_START;                    //开始采集图像
-    PORTA->ISFR = ~0;                               //写1请中断标志位
-    enable_irq(PORTA_IRQn);                         //允许PTA的中断
+   // ov7725_img_flag = IMG_START;                    //开始采集图像
+   // PORTA->ISFR = ~0;                               //写1请中断标志位
+   // enable_irq(PORTA_IRQn);                         //允许PTA的中断
     
     
 }
@@ -325,25 +353,20 @@ void startimage()
  void endimage()
 {
     
-      //7725 采集图像结束       
-    while(ov7725_img_flag != IMG_FINISH)            //等待图像采集完毕
-    {
-        if(ov7725_img_flag == IMG_FAIL)           //加入图像采集错误，则重新采集
-        {
-            ov7725_img_flag = IMG_START;            //开始采集图像
-            PORTA->ISFR = ~0;                       //写1请中断标志位
-            enable_irq(PORTA_IRQn);                 //允许PTA的中断
-        }
-    }  
-       
-       if(jioushu==1)
-    {
-     img_extract(img, CCDBufferPool ,OV7725_H*(OV7725_W/8));
-    }
-    else
-    {
-     img_extract(img22, CCDBufferPool ,OV7725_H*(OV7725_W/8));
-    }
+//      //7725 采集图像结束       
+//    while(ov7725_img_flag != IMG_FINISH)            //等待图像采集完毕
+//    {
+//        if(ov7725_img_flag == IMG_FAIL)           //加入图像采集错误，则重新采集
+//        {
+//            ov7725_img_flag = IMG_START;            //开始采集图像
+//            PORTA->ISFR = ~0;                       //写1请中断标志位
+//            enable_irq(PORTA_IRQn);                 //允许PTA的中断
+//        }
+//    }  
+//       
+
+//     img_extract(img, CCDBufferPool ,OV7725_H*(OV7725_W/8));
+
     
     
     //7620 采集图像结束  

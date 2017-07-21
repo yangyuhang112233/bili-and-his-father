@@ -46,7 +46,7 @@ typedef enum
 extern uint8_t CCDBufferPool[OV7725_H*(OV7725_W/8)];
 
 extern uint8_t img[OV7725_H*OV7725_W];
-extern uint8_t img22[OV7725_H*OV7725_W];
+
 
 
 extern int8_t center[OV7725_H];

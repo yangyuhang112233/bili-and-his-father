@@ -3,33 +3,40 @@
 <pre>
 <h1>礦ision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: μVision V5.12.0.0
-Copyright (C) 2014 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: a a, a, LIC=R4HY8-3N3UX-HR9XN-YV1HD-NC0LZ-U2JWL
+IDE-Version: μVision V5.23.0.0
+Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Xu Zihan, Tongji Uneiversity, LIC=4ZLQD-8VVF0-22QL4-FWP15-N60JV-8ZQ10
  
 Tool Versions:
-Toolchain:       MDK-ARM Professional  Version: 5.12.0.0
-Toolchain Path:  H:\keil5\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.05 (build 41)
-Assembler:       Armasm.exe V5.05 (build 41)
-Linker/Locator:  ArmLink.exe V5.05 (build 41)
-Library Manager: ArmAr.exe V5.05 (build 41)
-Hex Converter:   FromElf.exe V5.05 (build 41)
-CPU DLL:         SARMCM3.DLL V5.12.0.0
-Dialog DLL:      DCM.DLL V1.13.0.0
-    Target DLL: Segger\JL2CM3.dll
-Dialog DLL:      TCM.DLL V1.14.2.0
+Toolchain:       MDK-ARM Professional  Version: 5.23
+Toolchain Path:  D:\Program Files\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 4 (build 422)
+Assembler:       Armasm.exe V5.06 update 4 (build 422)
+Linker/Locator:  ArmLink.exe V5.06 update 4 (build 422)
+Library Manager: ArmAr.exe V5.06 update 4 (build 422)
+Hex Converter:   FromElf.exe V5.06 update 4 (build 422)
+CPU DLL:         SARMCM3.DLL V5.23
+Dialog DLL:      DCM.DLL V1.15.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.23.0
+Dialog DLL:      TCM.DLL V1.27.0.0
  
 <h2>Project:</h2>
-D:\小车代码\改代码3\6.11\Project\MDK\templete.uvprojx
-Project File Date:  06/08/2017
+F:\NXP\双车对抗\7.10\Project\MDK\templete.uvprojx
+Project File Date:  07/21/2017
 
 <h2>Output:</h2>
+*** Using Compiler 'V5.06 update 4 (build 422)', folder: 'D:\Program Files\Keil_v5\ARM\ARMCC\Bin'
 Build target 'mk60d10'
-compiling system_MK60D10.c...
 assembling startup_MK60D10.s...
-compiling main.c...
-..\src\canshu.h(98): warning:  #1-D: last line of file ends without a newline
+compiling system_MK60D10.c...
+compiling adc.c...
+compiling ov7725_Init.c...
+..\src\ov7725_Init.c(50): warning:  #188-D: enumerated type mixed with another type
+      r = ov7725_set_image_size(
+MAGE_SIZE);
+..\src\ov7725_Init.c: 1 warning, 0 errors
+compiling img_processing.c...
+..\src\canshu.h(104): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -43,15 +50,17 @@ compiling main.c...
   void Servo_Control();
 ..\src\pid.h(24): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\flag.h(13): warning:  #1-D: last line of file ends without a newline
+..\src\flag.h(12): warning:  #1-D: last line of file ends without a newline
   #endif
+..\src\qita.h(20): warning:  #1295-D: Deprecated declaration jiajiansujuli - give arg types
+  void jiajiansujuli();//动态设置加减速距离
 ..\src\qita.h(25): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\main.c: 10 warnings, 0 errors
+..\src\img_processing.c: 11 warnings, 0 errors
 compiling control.c...
-..\src\canshu.h(98): warning:  #1-D: last line of file ends without a newline
+..\src\canshu.h(104): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -65,21 +74,23 @@ compiling control.c...
   void Servo_Control();
 ..\src\pid.h(24): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\flag.h(13): warning:  #1-D: last line of file ends without a newline
+..\src\flag.h(12): warning:  #1-D: last line of file ends without a newline
   #endif
+..\src\qita.h(20): warning:  #1295-D: Deprecated declaration jiajiansujuli - give arg types
+  void jiajiansujuli();//动态设置加减速距离
 ..\src\qita.h(25): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\control.c(33): warning:  #68-D: integer conversion resulted in a change of sign
-                Left_QD_value=-65536+Left_QD_value;
+  		Left_QD_value=-65536+Left_QD_value;
 ..\src\control.c(35): warning:  #68-D: integer conversion resulted in a change of sign
-                Right_QD_value=-65536+Right_QD_value;
-..\src\control.c(51): warning:  #177-D: variable "speed" was declared but never referenced
+  		Right_QD_value=-65536+Right_QD_value;
+..\src\control.c(51): warning:  #177-D: variable "speed"  was declared but never referenced
                   uint16_t speed= 1000*mode;
-..\src\control.c: 13 warnings, 0 errors
-compiling img_processing.c...
-..\src\canshu.h(98): warning:  #1-D: last line of file ends without a newline
+..\src\control.c: 14 warnings, 0 errors
+compiling main.c...
+..\src\canshu.h(104): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -93,19 +104,17 @@ compiling img_processing.c...
   void Servo_Control();
 ..\src\pid.h(24): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\flag.h(13): warning:  #1-D: last line of file ends without a newline
+..\src\flag.h(12): warning:  #1-D: last line of file ends without a newline
   #endif
+..\src\qita.h(20): warning:  #1295-D: Deprecated declaration jiajiansujuli - give arg types
+  void jiajiansujuli();//动态设置加减速距离
 ..\src\qita.h(25): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\img_processing.c: 10 warnings, 0 errors
-compiling ov7725_Init.c...
-..\src\ov7725_Init.c(50): warning:  #188-D: enumerated type mixed with another type
-      r = ov7725_set_image_size(IMAGE_SIZE);
-..\src\ov7725_Init.c: 1 warning, 0 errors
+..\src\main.c: 11 warnings, 0 errors
 compiling getready.c...
-..\src\canshu.h(98): warning:  #1-D: last line of file ends without a newline
+..\src\canshu.h(104): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -119,42 +128,43 @@ compiling getready.c...
   void Servo_Control();
 ..\src\pid.h(24): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\flag.h(13): warning:  #1-D: last line of file ends without a newline
+..\src\flag.h(12): warning:  #1-D: last line of file ends without a newline
   #endif
+..\src\qita.h(20): warning:  #1295-D: Deprecated declaration jiajiansujuli - give arg types
+  void jiajiansujuli();//动态设置加减速距离
 ..\src\qita.h(25): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\getready.c(194): warning:  #546-D: transfer of control bypasses initialization of:
-            variable "colour" (declared at line 226)
-            variable "temp" (declared at line 227)
+..\src\getready.c(197): warning:  #546-D: transfer of control bypasses initialization of:
+            variable "colour"  (declared at line 234)
+            variable "temp"  (declared at line 235)
       switch(bamakaiguan)
       ^
-..\src\getready.c(371): warning:  #550-D: variable "avespeed" was set but never used
+..\src\getready.c(394): warning:  #550-D: variable "avespeed"  was set but never used
         uint16_t avespeed; //当前速度
-..\src\getready.c(492): warning:  #111-D: statement is unreachable
+..\src\getready.c(515): warning:  #111-D: statement is unreachable
                   break;
-..\src\getready.c(502): warning:  #111-D: statement is unreachable
+..\src\getready.c(525): warning:  #111-D: statement is unreachable
                   break;
-..\src\getready.c(533): warning:  #1-D: last line of file ends without a newline
+..\src\getready.c(556): warning:  #1-D: last line of file ends without a newline
     }
-..\src\getready.c: 15 warnings, 0 errors
-compiling adc.c...
+..\src\getready.c: 16 warnings, 0 errors
 compiling cmt.c...
 compiling common.c...
 compiling dac.c...
 compiling dma.c...
-compiling ftm.c...
 compiling gpio.c...
 compiling io2iic.c...
+compiling ftm.c...
 compiling systick.c...
+compiling pit.c...
+compiling wdog.c...
 compiling uart.c...
 compiling spi.c...
-compiling wdog.c...
-compiling pit.c...
 compiling sd.c...
 compiling Drv_LCD.c...
-..\src\canshu.h(98): warning:  #1-D: last line of file ends without a newline
+..\src\canshu.h(104): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\getready.h(18): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -166,15 +176,17 @@ compiling Drv_LCD.c...
   void Servo_Control();
 ..\src\pid.h(24): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\flag.h(13): warning:  #1-D: last line of file ends without a newline
+..\src\flag.h(12): warning:  #1-D: last line of file ends without a newline
   #endif
+..\src\qita.h(20): warning:  #1295-D: Deprecated declaration jiajiansujuli - give arg types
+  void jiajiansujuli();//动态设置加减速距离
 ..\src\qita.h(25): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
   #endif
-..\..\Libraries\devices\src\Drv_LCD.c: 9 warnings, 0 errors
+..\..\Libraries\devices\src\Drv_LCD.c: 10 warnings, 0 errors
 compiling ov7620.c...
-..\src\canshu.h(98): warning:  #1-D: last line of file ends without a newline
+..\src\canshu.h(104): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\getready.h(18): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -186,41 +198,20 @@ compiling ov7620.c...
   void Servo_Control();
 ..\src\pid.h(24): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\flag.h(13): warning:  #1-D: last line of file ends without a newline
+..\src\flag.h(12): warning:  #1-D: last line of file ends without a newline
   #endif
+..\src\qita.h(20): warning:  #1295-D: Deprecated declaration jiajiansujuli - give arg types
+  void jiajiansujuli();//动态设置加减速距离
 ..\src\qita.h(25): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\ov7620.c: 9 warnings, 0 errors
-compiling ov7620_back.c...
-..\src\canshu.h(98): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\getready.h(18): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\move.h(19): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\response.h(25): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\pid.h(17): warning:  #1295-D: Deprecated declaration Servo_Control - give arg types
-  void Servo_Control();
-..\src\pid.h(24): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\flag.h(13): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\qita.h(25): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\ov7620_back.c: 9 warnings, 0 errors
-compiling ov7725.c...
-compiling img_save.c...
+..\src\ov7620.c: 10 warnings, 0 errors
 compiling ff.c...
+compiling ov7725.c...
 compiling diskio.c...
-compiling flag.c...
-..\src\canshu.h(98): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
+compiling ov7620_back.c...
+..\src\canshu.h(104): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\getready.h(18): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -232,71 +223,46 @@ compiling flag.c...
   void Servo_Control();
 ..\src\pid.h(24): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\flag.h(13): warning:  #1-D: last line of file ends without a newline
+..\src\flag.h(12): warning:  #1-D: last line of file ends without a newline
   #endif
+..\src\qita.h(20): warning:  #1295-D: Deprecated declaration jiajiansujuli - give arg types
+  void jiajiansujuli();//动态设置加减速距离
 ..\src\qita.h(25): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\flag.c(15): warning:  #177-D: variable "avespeed" was declared but never referenced
+..\src\ov7620_back.c: 10 warnings, 0 errors
+compiling img_save.c...
+compiling flag.c...
+..\src\canshu.h(104): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\move.h(19): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\response.h(25): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\pid.h(17): warning:  #1295-D: Deprecated declaration Servo_Control - give arg types
+  void Servo_Control();
+..\src\pid.h(24): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\flag.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\qita.h(20): warning:  #1295-D: Deprecated declaration jiajiansujuli - give arg types
+  void jiajiansujuli();//动态设置加减速距离
+..\src\qita.h(25): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\flag.c(15): warning:  #177-D: variable "xinbiao"  was declared but never referenced
        uint16_t avespeed,xinbiao;
-..\src\flag.c(15): warning:  #177-D: variable "xinbiao" was declared but never referenced
-       uint16_t avespeed,xinbiao;
-..\src\flag.c(129): warning:  #177-D: variable "hbizhang" was declared but never referenced
+..\src\flag.c(158): warning:  #177-D: variable "hbizhang"  was declared but never referenced
        uint16_t hbizhang;//避障行坐标
-..\src\flag.c(131): warning:  #550-D: variable "kl" was set but never used
+..\src\flag.c(160): warning:  #550-D: variable "kl"  was set but never used
        uint8_t kl=0;
 ..\src\flag.c: 14 warnings, 0 errors
-compiling move.c...
-..\src\canshu.h(98): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\getready.h(18): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\move.h(19): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\response.h(25): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\pid.h(17): warning:  #1295-D: Deprecated declaration Servo_Control - give arg types
-  void Servo_Control();
-..\src\pid.h(24): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\flag.h(13): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\qita.h(25): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\move.c(111): warning:  #1-D: last line of file ends without a newline
-    
-..\src\move.c: 11 warnings, 0 errors
-compiling response.c...
-..\src\canshu.h(98): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\getready.h(18): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\move.h(19): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\response.h(25): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\pid.h(17): warning:  #1295-D: Deprecated declaration Servo_Control - give arg types
-  void Servo_Control();
-..\src\pid.h(24): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\flag.h(13): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\qita.h(25): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\src\response.c(340): warning:  #1-D: last line of file ends without a newline
-   }
-..\src\response.c: 11 warnings, 0 errors
 compiling pid.c...
-..\src\canshu.h(98): warning:  #1-D: last line of file ends without a newline
+..\src\canshu.h(104): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -310,19 +276,49 @@ compiling pid.c...
   void Servo_Control();
 ..\src\pid.h(24): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\flag.h(13): warning:  #1-D: last line of file ends without a newline
+..\src\flag.h(12): warning:  #1-D: last line of file ends without a newline
   #endif
+..\src\qita.h(20): warning:  #1295-D: Deprecated declaration jiajiansujuli - give arg types
+  void jiajiansujuli();//动态设置加减速距离
 ..\src\qita.h(25): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\pid.c(20): warning:  #177-D: variable "piancha1" was declared but never referenced
+..\src\pid.c(21): warning:  #177-D: variable "piancha1"  was declared but never referenced
       uint16_t piancha1;
-..\src\pid.c(72): warning:  #550-D: variable "cha" was set but never used
+..\src\pid.c(62): warning:  #550-D: variable "k1"  was set but never used
+      float k1=1;//积分计算的系数
+..\src\pid.c(74): warning:  #550-D: variable "cha"  was set but never used
   uint8_t cha=0;
-..\src\pid.c: 12 warnings, 0 errors
+..\src\pid.c: 14 warnings, 0 errors
+compiling response.c...
+..\src\canshu.h(104): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\getready.h(18): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\move.h(19): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\response.h(25): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\pid.h(17): warning:  #1295-D: Deprecated declaration Servo_Control - give arg types
+  void Servo_Control();
+..\src\pid.h(24): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\flag.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\qita.h(20): warning:  #1295-D: Deprecated declaration jiajiansujuli - give arg types
+  void jiajiansujuli();//动态设置加减速距离
+..\src\qita.h(25): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\response.c(427): warning:  #1-D: last line of file ends without a newline
+   }
+..\src\response.c: 12 warnings, 0 errors
 compiling canshu.c...
-..\src\canshu.h(98): warning:  #1-D: last line of file ends without a newline
+..\src\canshu.h(104): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -336,15 +332,43 @@ compiling canshu.c...
   void Servo_Control();
 ..\src\pid.h(24): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\flag.h(13): warning:  #1-D: last line of file ends without a newline
+..\src\flag.h(12): warning:  #1-D: last line of file ends without a newline
   #endif
+..\src\qita.h(20): warning:  #1295-D: Deprecated declaration jiajiansujuli - give arg types
+  void jiajiansujuli();//动态设置加减速距离
 ..\src\qita.h(25): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\canshu.c: 10 warnings, 0 errors
+..\src\canshu.c: 11 warnings, 0 errors
+compiling move.c...
+..\src\canshu.h(104): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\getready.h(18): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\move.h(19): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\response.h(25): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\pid.h(17): warning:  #1295-D: Deprecated declaration Servo_Control - give arg types
+  void Servo_Control();
+..\src\pid.h(24): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\flag.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\qita.h(20): warning:  #1295-D: Deprecated declaration jiajiansujuli - give arg types
+  void jiajiansujuli();//动态设置加减速距离
+..\src\qita.h(25): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\move.c(202): warning:  #1-D: last line of file ends without a newline
+    
+..\src\move.c: 12 warnings, 0 errors
 compiling qita.c...
-..\src\canshu.h(98): warning:  #1-D: last line of file ends without a newline
+..\src\canshu.h(104): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -358,23 +382,26 @@ compiling qita.c...
   void Servo_Control();
 ..\src\pid.h(24): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\flag.h(13): warning:  #1-D: last line of file ends without a newline
+..\src\flag.h(12): warning:  #1-D: last line of file ends without a newline
   #endif
+..\src\qita.h(20): warning:  #1295-D: Deprecated declaration jiajiansujuli - give arg types
+  void jiajiansujuli();//动态设置加减速距离
 ..\src\qita.h(25): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\qita.c: 10 warnings, 0 errors
+..\src\qita.c: 11 warnings, 0 errors
 linking...
-Program Size: Code=31560 RO-data=2868 RW-data=10064 ZI-data=73144  
+Program Size: Code=32632 RO-data=2868 RW-data=5300 ZI-data=73140  
 FromELF: creating hex file...
-".\OBJ\templete.axf" - 0 Error(s), 144 Warning(s).
+".\OBJ\templete.axf" - 0 Error(s), 156 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
-  D:\小车代码\改代码3\6.11\Project\MDK\RTE
-  H:\keil5\ARM\PACK\Keil\Kinetis_K60_DFP\1.2.0\Device\Include
+  .\RTE\_mk60d10
+  D:\Program Files\Keil_v5\ARM\PACK\Keil\Kinetis_K60_DFP\1.2.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
+Build Time Elapsed:  00:00:06
 </pre>
 </body>
 </html>

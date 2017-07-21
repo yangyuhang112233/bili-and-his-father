@@ -7,9 +7,11 @@ uint8_t  kaiqi=0;
 //4 2 5 3 1 4 2 5 1 3
 
 //避障方式路径规划： 
-uint8_t turn[20]={4,4,4,3,3,4,4,4,3,4,4,4,4,4,4,4,4,4,4,4};  //路径规划： 1 避障左转； 2 避障右转； 3 左切入； 4 右切入；
-    
+//uint8_t turn[20]={3,3,3,4,4,4,4,3,3,3,3,4,3,3,3,3,3,3,3,3};  //路径规划： 1 避障左转； 2 避障右转； 3 左切入； 4 右切入；
 
+uint8_t turn[20]={1,1,1,2,2,2,2,1,1,1,1,2,3,1,1,1,3,3,3,3};  //路径规划： 1 避障左转； 2 避障右转； 3 左切入； 4 右切入；
+
+    
 uint8_t turn11[20]={4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4};  //在turn为3或4的情况下，经过信标后，如果找不到信标，是否反向大转
     
 uint8_t delay[20]={4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4};  //不同的灯lookfor后直线延时
@@ -22,8 +24,7 @@ uint8_t speed3[20]={1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
 uint8_t speed4[20]={1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};  
 uint8_t speed5[20]={1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};  
 uint8_t speed6[20]={1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};  
-
-    
+   
 ////设置速度：快速  始终保留一组能稳定运行的
 //uint8_t speedzhuanwan=  15;        //寻找信标转弯速度
 //uint8_t speedjiasu=     32;            //远离信标 直线加速
@@ -36,16 +37,30 @@ uint8_t speed6[20]={1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
     
 //  //设置速度：稳速   始终保留一组能稳定运行的
 uint8_t speedzhuanwan=  15;        //寻找信标转弯速度
-uint8_t speedjiasu=     38;            //远离信标 直线加速
-uint8_t speedxinjiansu= 16;        //靠近信标 进行减速
+uint8_t speedzhuanwan2=  25;        //低速时寻找信标转弯速度    
+    
+    
+//uint8_t speedjiasu=     45;            //远离信标 直线加速  
+//uint8_t speedxinjiansu= 7;        //靠近信标 进行减速    
+//uint8_t speedxinjia=    28;          //靠近信标 速度太慢 而加速
+//uint8_t speeddazhuan=   20;         //找不到信标大转弯速度    
+//uint8_t speedbizhang=   6;          //避障减速    
+//int8_t speedxinbi1=     -5;            //信标避障减速
+
+    
+uint8_t speedjiasu=     45;            //远离信标 直线加速  
+uint8_t speedxinjiansu= 20;        //靠近信标 进行减速    
 uint8_t speedxinjia=    28;          //靠近信标 速度太慢 而加速
-uint8_t speeddazhuan=   20;         //找不到信标大转弯速度
+uint8_t speeddazhuan=   20;         //找不到信标大转弯速度    
+uint8_t speedbizhang=   6;          //避障减速    
+int8_t speedxinbi1=     10;            //信标避障减速
+     
+
     
-uint8_t speedbizhang=   6;          //避障减速
-    
-uint8_t speedxinbi1=     7;            //信标避障减速
-uint8_t speedxinbi2=     7;            //信标避障减速     
-    
+uint8_t speedxinjia2=    28;          //靠近信标 速度太慢 而加速
+uint8_t speedxinjiansu2= 18;        //靠近信标 进行减速
+uint8_t speedjiasu2=     45;            //远离信标 直线加速
+int8_t speedxinbi2=     12;            //信标避障减速
     
 //  //设置速度：稳速   始终保留一组能稳定运行的
 //uint8_t speedzhuanwan=  15;        //寻找信标转弯速度
@@ -78,43 +93,43 @@ uint8_t speedxinbi2=     7;            //信标避障减速
 
 
 
-    
-    
+      
     
 //uint8_t speedxinbijia=  23;          //信标避障时太慢，则加速
-   
-    
+
+float pianchak=1.1;//边缘切过时的偏差计算系数
+
 //舵机打角参数：
-uint16_t anglemid=510;//舵机中值
-uint16_t angleleft=609;//舵机左极限 
-uint16_t angleright=415;//舵机右极限 
+uint16_t anglemid=770;//舵机中值
+uint16_t angleleft=840;//舵机左极限 
+uint16_t angleright=700;//舵机右极限 
 
-uint16_t hide_left=560;//避障的左转打角
-uint16_t hide_right=460;//避障的右转打角
+uint16_t hide_left=820;//避障的左转打角+50
+uint16_t hide_right=720;//避障的右转打角-50
 
-uint16_t acc_left=525;//加速段舵机打角左限
-uint16_t acc_right=495;//加速度段舵机打角右限
+uint16_t acc_left=785;//加速段舵机打角左限+15
+uint16_t acc_right=755;//加速度段舵机打角右限-15
 
-uint16_t hide2_left=545;//信标避障的左转打角      切过信标不使用
-uint16_t hide2_right=475;//信标避障的右转打角
+uint16_t hide2_left=805;//信标避障的左转打角    +35  切过信标不使用
+uint16_t hide2_right=735;//信标避障的右转打角-35
 
 float anglek=0.43;//打角系数0.48
- int16_t Kd=12;//舵机pd微分系数
+int16_t Kd=4;//舵机pd微分系数
  
 //避障：
 uint16_t door_7620=65;//7620避障像素点个数阀值
 uint8_t h7620=45;//7620避障距离
 
-uint16_t delay1=15;//普通避障延时
-uint16_t delay2=8;//信标避障延时
+uint16_t delay1=13;//普通避障延时
+uint16_t delay2=5;//信标避障延时
 
 uint16_t stopbizhangh7620=65;//7620避障时信标行坐标小于这个值时不进行普通避障
 
 uint16_t stopbizhangh7725=70;//7725避障时信标行坐标小于这个值时不进行普通避障
 
-uint16_t xinbiaoqieguo_h=14;//信标切过行坐标
 
-uint16_t xinbiaobizhang_h=16;//信标避障行坐标
+
+
 
 uint16_t door7620=240;//7620摄像头找信标阀值
 
@@ -124,10 +139,24 @@ uint32_t tt1;//记录时间
 uint8_t xiangsuzhi=80;//障碍物在7620图像中的像素值   自适应算法不使用
 
 uint16_t cammid=160;//小车正前方在7620图像中的列坐标
-   
-uint16_t acc_stop=30;//加速结束时的行坐标  
-    
-    
+
+//避障行坐标 低速好用
+uint16_t xinbiaobizhang_h=29;//信标避障行坐标   
+float k11=1;
+
+////快速好用
+//uint16_t xinbiaobizhang_h=30;//信标避障行坐标   
+//float k11=1.15;
+
+int c=0;
+
+uint16_t acc_stop2=42;//加速结束时的行坐标  
+float k12=1.4;
+
+
+uint16_t acc_stop1=34;//加速结束时的行坐标 
+uint16_t xinbiaoqieguo_h=14;//信标切过行坐标
+
 //标志位
 
 uint16_t jishuwei=0;//用于记录程序的循环次数
