@@ -276,6 +276,7 @@ cha=speedx-avespeed;
 		
 		if(pwm_out2 > 0)
 		{
+//			pwm_out2 = -pwm_out2 ;	//
         FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH3, pwm_out2 ); 
         FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH2, 0);
 		}

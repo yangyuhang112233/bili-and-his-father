@@ -6,8 +6,6 @@ int main(void)
     
     getready();
     
-
-    
     firstimage();
     duqubama();
     
@@ -15,7 +13,7 @@ int main(void)
     while(1)
     {   
         
-
+		QD_value();
               
         
        //这里根据count1的值来重写速度值，实现速度的路径规划 
@@ -81,7 +79,7 @@ int main(void)
         switch(state)
               {
                 case 0://找不到信标，转一转来找到信标
-                lookfor();
+//                lookfor();
                 break;
                 
                 case 1://找到信标的状态，遇到前方有障碍物，进行避障
@@ -123,7 +121,7 @@ int main(void)
 //              }
               
                move();
-             
+//             
               
               
 //        FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,2500 );

@@ -118,7 +118,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGUARM</Key>
-          <Name>榳?[	晈榳?</Name>
+          <Name>€[?L鰋</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -161,175 +161,155 @@
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>ov7620_img_flag,0x0A</ItemText>
+          <ItemText>qd_left_value,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>CCD_Image,0x0A</ItemText>
+          <ItemText>qd_right_value,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>wantRow,0x0A</ItemText>
+          <ItemText>target_hang</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>currRow,0x0A</ItemText>
+          <ItemText>hang,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>1</WinNumber>
-          <ItemText>CCD_Image,0x0A</ItemText>
+          <ItemText>ver_col,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
-          <ItemText>OV7620_H</ItemText>
+          <ItemText>left_len,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>1</WinNumber>
-          <ItemText>target_hang</ItemText>
+          <ItemText>right_len,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>7</count>
           <WinNumber>1</WinNumber>
-          <ItemText>hang,0x0A</ItemText>
+          <ItemText>left,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>8</count>
           <WinNumber>1</WinNumber>
-          <ItemText>ver_col,0x0A</ItemText>
+          <ItemText>right,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>9</count>
           <WinNumber>1</WinNumber>
-          <ItemText>left_len,0x0A</ItemText>
+          <ItemText>start,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>10</count>
           <WinNumber>1</WinNumber>
-          <ItemText>right_len,0x0A</ItemText>
+          <ItemText>center,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>11</count>
           <WinNumber>1</WinNumber>
-          <ItemText>left,0x0A</ItemText>
+          <ItemText>center_ave,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>12</count>
           <WinNumber>1</WinNumber>
-          <ItemText>right,0x0A</ItemText>
+          <ItemText>center_correct,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>13</count>
           <WinNumber>1</WinNumber>
-          <ItemText>start,0x0A</ItemText>
+          <ItemText>track,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>14</count>
           <WinNumber>1</WinNumber>
-          <ItemText>center,0x0A</ItemText>
+          <ItemText>hang,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>15</count>
           <WinNumber>1</WinNumber>
-          <ItemText>center_ave,0x0A</ItemText>
+          <ItemText>dir,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>16</count>
           <WinNumber>1</WinNumber>
-          <ItemText>center_correct,0x0A</ItemText>
+          <ItemText>center_adj,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>17</count>
           <WinNumber>1</WinNumber>
-          <ItemText>track,0x0A</ItemText>
+          <ItemText>jump,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>18</count>
           <WinNumber>1</WinNumber>
-          <ItemText>hang,0x0A</ItemText>
+          <ItemText>sum_h</ItemText>
         </Ww>
         <Ww>
           <count>19</count>
           <WinNumber>1</WinNumber>
-          <ItemText>dir,0x0A</ItemText>
+          <ItemText>sum_l</ItemText>
         </Ww>
         <Ww>
           <count>20</count>
           <WinNumber>1</WinNumber>
-          <ItemText>center_adj,0x0A</ItemText>
+          <ItemText>num</ItemText>
         </Ww>
         <Ww>
           <count>21</count>
           <WinNumber>1</WinNumber>
-          <ItemText>jump,0x0A</ItemText>
+          <ItemText>dist</ItemText>
         </Ww>
         <Ww>
           <count>22</count>
           <WinNumber>1</WinNumber>
-          <ItemText>sum_h</ItemText>
+          <ItemText>cnt_l</ItemText>
         </Ww>
         <Ww>
           <count>23</count>
           <WinNumber>1</WinNumber>
-          <ItemText>sum_l</ItemText>
+          <ItemText>target_l,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>24</count>
           <WinNumber>1</WinNumber>
-          <ItemText>num</ItemText>
+          <ItemText>target_h,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>25</count>
           <WinNumber>1</WinNumber>
-          <ItemText>dist</ItemText>
+          <ItemText>cnt_h</ItemText>
         </Ww>
         <Ww>
           <count>26</count>
           <WinNumber>1</WinNumber>
-          <ItemText>cnt_l</ItemText>
+          <ItemText>drivemode,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>27</count>
           <WinNumber>1</WinNumber>
-          <ItemText>target_l,0x0A</ItemText>
+          <ItemText>drivemode</ItemText>
         </Ww>
         <Ww>
           <count>28</count>
           <WinNumber>1</WinNumber>
-          <ItemText>target_h,0x0A</ItemText>
+          <ItemText>ov7725_img_flag,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>29</count>
           <WinNumber>1</WinNumber>
-          <ItemText>cnt_h</ItemText>
+          <ItemText>ov7725_img_flag,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>30</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>drivemode,0x0A</ItemText>
-        </Ww>
-        <Ww>
-          <count>31</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>drivemode</ItemText>
-        </Ww>
-        <Ww>
-          <count>32</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>ov7725_img_flag,0x0A</ItemText>
-        </Ww>
-        <Ww>
-          <count>33</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>ov7725_img_flag,0x0A</ItemText>
-        </Ww>
-        <Ww>
-          <count>34</count>
           <WinNumber>1</WinNumber>
           <ItemText>anglex</ItemText>
         </Ww>
