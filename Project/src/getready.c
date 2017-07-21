@@ -56,10 +56,10 @@ void PIT1_HandlerU( void )
     FTM_PWM_ChangeDuty(HW_FTM0, HW_FTM_CH2, 0); 
     FTM_PWM_ChangeDuty(HW_FTM0, HW_FTM_CH3, 0);
 		
-//		 //初始化pit模块的0通道，产生20ms的中断
-//      PIT_QuickInit(HW_PIT_CH0, 20000);
-//      PIT_CallbackInstall(HW_PIT_CH0, QD_value ); //注册通道0的回调函数为：QD_value（）
-//      PIT_ITDMAConfig(HW_PIT_CH0, kPIT_IT_TOF, ENABLE); //开起模块0通道中断 
+		 //初始化pit模块的0通道，产生20ms的中断
+      PIT_QuickInit(HW_PIT_CH0, 20000);
+      PIT_CallbackInstall(HW_PIT_CH0, QD_value ); //注册通道0的回调函数为：QD_value（）
+      PIT_ITDMAConfig(HW_PIT_CH0, kPIT_IT_TOF, ENABLE); //开起模块0通道中断 
         
         //初始化pit模块的1通道，产生1ms的中断
 	  PIT_QuickInit(HW_PIT_CH1, 1000);
