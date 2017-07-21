@@ -264,14 +264,14 @@ cha=speedx-avespeed;
 	     
 	    if(pwm_out1 > 0)
 		{
-	    FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,pwm_out1 );
-        FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,0);
+	    FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,0 );
+        FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,pwm_out1);
 		}
 		else
 		{
 		pwm_out1 = -pwm_out1 ;	
-		FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,0 );
-        FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,pwm_out1 );
+		FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,pwm_out1 );
+        FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,0 );
 		}
 		
 		if(pwm_out2 > 0)

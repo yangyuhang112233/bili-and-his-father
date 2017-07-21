@@ -27,7 +27,7 @@ Project File Date:  07/21/2017
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 4 (build 422)', folder: 'D:\Program Files\Keil_v5\ARM\ARMCC\Bin'
 Build target 'mk60d10'
-compiling pid.c...
+compiling main.c...
 ..\src\canshu.h(104): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
@@ -50,17 +50,11 @@ compiling pid.c...
   #endif
 ..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
   #endif
-..\src\pid.c(21): warning:  #177-D: variable "piancha1"  was declared but never referenced
-      uint16_t piancha1;
-..\src\pid.c(62): warning:  #550-D: variable "k1"  was set but never used
-      float k1=1;//积分计算的系数
-..\src\pid.c(74): warning:  #550-D: variable "cha"  was set but never used
-  uint8_t cha=0;
-..\src\pid.c: 14 warnings, 0 errors
+..\src\main.c: 11 warnings, 0 errors
 linking...
-Program Size: Code=32600 RO-data=2868 RW-data=5300 ZI-data=73140  
+Program Size: Code=28084 RO-data=2848 RW-data=5296 ZI-data=73112  
 FromELF: creating hex file...
-".\OBJ\templete.axf" - 0 Error(s), 14 Warning(s).
+".\OBJ\templete.axf" - 0 Error(s), 11 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   .\RTE\_mk60d10
