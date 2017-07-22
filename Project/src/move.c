@@ -21,52 +21,74 @@
       }
       //∏˘æ›∂Êª˙¥ÚΩ«…Ë÷√◊Û”“¡Ω∏ˆ¬÷◊”µƒ◊™ÀŸ£¨≤¢µ˜”√pid µœ÷◊Û”“¬÷◊™ÀŸ
     
-    //float proportion[5]={1.41,1.36,1.28,1.24,1.19};//≤ÓÀŸ±»¿
+    //float proportion[5]={1.41,1.36,1.28,1.24,1.19};//≤ÓÀŸ±»
      float proportion[5]={1.4,1.15,1,1,1};//≤ÓÀŸ±»¿˝
+     float bili=0;//≤ÓÀŸ±»¿˝
+     
     //≤ÓÀŸø…ƒ‹µº÷¬‘⁄ª¨µƒ≥°µÿ¥Úª¨
      
     uint16_t leftspeed,rightspeed;//◊Û”“¬÷…Ë∂®ÀŸ∂»
     uint16_t anglec;//∏˘æ›Ω«∂»—°‘Ò≤ÓÀŸ
      
+      rightspeed=speedx;
+       leftspeed=speedx;  
     
     //±æ¿¥√ª”–≤ÓÀŸ£¨–ßπ˚“≤ªπ∫√
-             if(anglenow>anglemid-51&&anglenow<anglemid+51) 
-      {
-        rightspeed=speedx;
-        leftspeed=speedx;         
-      }        
-      else
-      {        
-       anglec=anglenow/10;
-                 
-        if(anglec<46)  //”“◊™
-        {
-         anglec=anglec-41; 
-         rightspeed=speedx; 
-         leftspeed=proportion[anglec]*speedx;       
-        }
-        if(anglec>55)           //◊Û◊™
-         {
-          anglec=60-anglec; 
-          rightspeed=proportion[anglec]*speedx; 
-          leftspeed=speedx;          
-         }
-       } 
+//             if(anglenow>anglemid-51&&anglenow<anglemid+51) 
+//      {
+//        rightspeed=speedx;
+//        leftspeed=speedx;         
+//      }        
+//      else
+//      {        
+//       anglec=anglenow/10;
+//                 
+//        if(anglec<46)  //”“◊™
+//        {
+//         anglec=anglec-41; 
+//         rightspeed=speedx;
+//          bili=proportion[anglec];           
+//         leftspeed=bili*speedx;       
+//        }
+//        if(anglec>55)           //◊Û◊™
+//         {
+//          anglec=60-anglec; 
+//           bili=proportion[anglec];   
+//          rightspeed=bili*speedx; 
+//          leftspeed=speedx;          
+//         }
+//       } 
+//       if(state==4)
+//       {
+//            if(anglec<46)  //”“◊™
+//          {
+//          
+//         rightspeed=speedx;
+//                  
+//         leftspeed=1.7*speedx;       
+//        }
+//        if(anglec>55)           //◊Û◊™
+//         {
+//          rightspeed=1.7*speedx; 
+//          leftspeed=speedx;          
+//         }           
+//       }
+      
        
+       //◊¢“‚“ª∏ˆŒ Ã‚£∫‘⁄state==0 ±ø…ƒ‹Ω¯»Î“ª¥Œ≈–∂œ∫ÛæÕ≤ªΩ¯»Î≈–∂œ£¨µÁª˙ ‰≥ˆ’ºø’±»ª·πÃ∂®≤ª±‰£¨À˘“‘“™º”“ª∏ˆ≈–∂œ
         if(state==0)
         {
             if(ab==0)
             {
                 if(forestate==3||forestate==4)
               {
-                  //”√¥ÚΩ«¿¥≈–∂œ
                  if(leftspeed>rightspeed)
                 {
-                  Motor_Control(25,3);
+                  Motor_Control(30,3);
                 }
                  else
                 { 
-                  Motor_Control(3,25);      
+                  Motor_Control(3,30);      
                 }     
                }
             else
@@ -89,9 +111,26 @@
          Motor_Control(leftspeed,rightspeed);//…œ√Ê «ÀŸ∂»—°‘Ò£¨’‚¿Ô «ÀŸ∂» µœ÷
          ab=0;
         }
-       
-   
-        
+        //º”“ª∏ˆÀŸ∂»≈–∂œ ≤ªƒ‹Œ™∏∫
+       if(state==0)
+{
+    if(turn[count1-1]==1)
+    {
+   if(qd_left_value<1)
+   {
+    FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,0);
+    FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,0);
+   }
+   }
+   if(turn[count1-1]==2)
+    {
+        if(qd_right_value<1)
+   {
+    FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH3, 0); 
+    FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH2, 0);
+   }
+   }
+}
 //       if(ab==0)
 //{
 //    

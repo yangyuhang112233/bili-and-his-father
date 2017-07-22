@@ -73,7 +73,7 @@ void PIT1_HandlerU( void )
     
     //摄像头初始化
     OV7620_Init();
-   // ov7725_Init();
+    ov7725_Init();
 
     /* 看门狗初始化   500ms  */
 //   	WDOG_QuickInit(500);
@@ -298,8 +298,8 @@ void firstimage()
        }
   }  
         
-     //ov7725_Get_Imge();
-     //img_extract(img, CCDBufferPool ,OV7725_H*(OV7725_W/8));
+     ov7725_Get_Imge();
+     img_extract(img, CCDBufferPool ,OV7725_H*(OV7725_W/8));
    
     if(count>2)break;       
 }
@@ -323,7 +323,7 @@ void startimage()
     if(jioushu==0)jioushu=1;
     else 
     {
-		jioushu=0;
+    jioushu=0;
     }
 
      if(jioushu==1)
@@ -343,9 +343,9 @@ void startimage()
    	    
    
      //7725摄像头开始采集图像
-   // ov7725_img_flag = IMG_START;                    //开始采集图像
-   // PORTA->ISFR = ~0;                               //写1请中断标志位
-   // enable_irq(PORTA_IRQn);                         //允许PTA的中断
+    ov7725_img_flag = IMG_START;                    //开始采集图像
+    PORTA->ISFR = ~0;                               //写1请中断标志位
+    enable_irq(PORTA_IRQn);                         //允许PTA的中断
     
     
 }
@@ -353,19 +353,19 @@ void startimage()
  void endimage()
 {
     
-//      //7725 采集图像结束       
-//    while(ov7725_img_flag != IMG_FINISH)            //等待图像采集完毕
-//    {
-//        if(ov7725_img_flag == IMG_FAIL)           //加入图像采集错误，则重新采集
-//        {
-//            ov7725_img_flag = IMG_START;            //开始采集图像
-//            PORTA->ISFR = ~0;                       //写1请中断标志位
-//            enable_irq(PORTA_IRQn);                 //允许PTA的中断
-//        }
-//    }  
-//       
+      //7725 采集图像结束       
+    while(ov7725_img_flag != IMG_FINISH)            //等待图像采集完毕
+    {
+        if(ov7725_img_flag == IMG_FAIL)           //加入图像采集错误，则重新采集
+        {
+            ov7725_img_flag = IMG_START;            //开始采集图像
+            PORTA->ISFR = ~0;                       //写1请中断标志位
+            enable_irq(PORTA_IRQn);                 //允许PTA的中断
+        }
+    }  
+       
 
-//     img_extract(img, CCDBufferPool ,OV7725_H*(OV7725_W/8));
+     img_extract(img, CCDBufferPool ,OV7725_H*(OV7725_W/8));
 
     
     
@@ -446,18 +446,19 @@ void stopmove()
 	     
 	    if(pwm_out1 > 0)
 		{
-	    FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,pwm_out1 );
-        FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,0);
+	    FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,0 );
+        FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,pwm_out1);
 		}
 		else
 		{
 		pwm_out1 = -pwm_out1 ;	
-		FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,0 );
-        FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,pwm_out1 );
+		FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,pwm_out1 );
+        FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,0 );
 		}
 		
 		if(pwm_out2 > 0)
 		{
+//			pwm_out2 = -pwm_out2 ;	//
         FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH3, pwm_out2 ); 
         FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH2, 0);
 		}

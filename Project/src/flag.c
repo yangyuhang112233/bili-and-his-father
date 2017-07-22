@@ -74,21 +74,24 @@ else
       static bool a=0;
       avespeed=(qd_left_value+qd_right_value)/2;
      
+//          
+//     if(avespeed<28)
+//     {         
+//     //避障行坐标 低速好用
+//     xinbiaobizhang_h=25;//信标避障行坐标   
+//     k11=1;
+//     }
+//     else
+//     {
+//      //快速好用
+//      xinbiaobizhang_h=32;//信标避障行坐标   
+//      k11=1.15;
+//     }
+      xinbiaobizhang_h=35;//信标避障行坐标   
+      k11=1.2;
+      julican();
           
-     if(avespeed<32)
-     {         
-     //避障行坐标 低速好用
-     xinbiaobizhang_h=24;//信标避障行坐标   
-     k11=1;
-     }
-     else
-     {
-      //快速好用
-      xinbiaobizhang_h=32;//信标避障行坐标   
-      k11=1.15;
-     }
-          
-          
+      //调常数c 
           
     //进入信标避障后速度会变化，计算的避障行坐标也会变化。只能采用第一次计算的信标避障行坐标
       if(a==0)
@@ -99,7 +102,7 @@ else
         
             if(turn[count1]==1||turn[count1]==2)
           {
-                xinbiaobizhang_hh=c+xinbiaobizhang_h+avespeed/k11;         
+                xinbiaobizhang_hh=can+xinbiaobizhang_h+avespeed/k11;         
                 if(target_h<xinbiaobizhang_hh)
                {
                   xinbiaobizhang=1;a=1;

@@ -270,12 +270,12 @@
               
              //在第一次进入此处时设定速度值，之后在这个函数处设定值不变。
               //第一次设定速度值时根据进入信标避障时的速度设定速度是加速还是减速
-              if(speedx!=speedxinjiansu&&speedx!=speedxinjia)
+              if(speedx!=speedxinjiansu2&&speedx!=speedxinjia2)
               {
                     
                   
                   
-                    if(avespeed>15)
+                    if(avespeed>20)
                     {
                       speedx=speedxinjiansu2;     
                     }
