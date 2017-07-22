@@ -6,6 +6,76 @@ uint8_t bamakaiguan=0;//拔码开关状态
 uint16_t xinbiao0[10];//过去的信标像素值
 uint8_t xinbiaobiaozhi=0;//判定是否信标像素个数超过400
 uint8_t xidengshu=0;//熄过得灯的个数
+int can=0;
+
+void julican()
+{
+    int avespeed;
+ avespeed=(qd_left_value+qd_right_value)/2;
+     
+          
+//     if(avespeed<40)
+//     {         
+//     //避障行坐标 低速好用
+//     }
+//     else
+//     {
+//      //快速好用
+//      xinbiaobizhang_h=32;//信标避障行坐标   
+//      k11=1.02;
+//     }
+ // 7 1 8 2 10 1
+     switch(count1)
+     {
+         case 0:  
+      can=-1;
+       break;             
+          case 1:  
+       can=0;
+       break;
+          case 2:
+           can=0;   
+       break;
+         case 3:  
+   can=0;
+       break;
+         case 4:  
+  can=0;
+       break;
+         case 5:  
+ can=0;
+       break;
+        case 6:  
+ can=-2;
+       break;
+          case 7:  
+ can=2;
+       break;
+          case 8:  
+ can=0;
+       break;
+         case 9:  
+ can=-1;
+       break;
+                                                                                          
+           case 10:  
+ can=0;
+       break;
+           case 11:  
+ can=0;
+       break;
+            case 12:  
+ can=0;
+       break;
+                                                                                                                              
+           default:
+             break;
+     }
+       
+}
+
+
+
 
  void speedset()
  {

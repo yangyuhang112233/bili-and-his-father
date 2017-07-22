@@ -25,21 +25,12 @@ uint8_t speed4[20]={1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
 uint8_t speed5[20]={1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};  
 uint8_t speed6[20]={1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};  
    
-////设置速度：快速  始终保留一组能稳定运行的
-//uint8_t speedzhuanwan=  15;        //寻找信标转弯速度
-//uint8_t speedjiasu=     32;            //远离信标 直线加速
-//uint8_t speedxinjiansu= 16;        //靠近信标 进行减速
-//uint8_t speedxinjia=    28;          //靠近信标 速度太慢 而加速
-//uint8_t speeddazhuan=   20;         //找不到信标大转弯速度
-//uint8_t speedbizhang=   6;          //避障减速
-//uint8_t speedxinbi1=     7;            //信标避障减速
-//uint8_t speedxinbi2=     7;            //信标避障减速
     
-//  //设置速度：稳速   始终保留一组能稳定运行的
+//  //设置速度：稳速   始终保留一组能稳定运行的  
 uint8_t speedzhuanwan=  15;        //寻找信标转弯速度
 uint8_t speedzhuanwan2=  25;        //低速时寻找信标转弯速度    
     
-    
+//信标切过的速度   
 //uint8_t speedjiasu=     45;            //远离信标 直线加速  
 //uint8_t speedxinjiansu= 7;        //靠近信标 进行减速    
 //uint8_t speedxinjia=    28;          //靠近信标 速度太慢 而加速
@@ -47,55 +38,36 @@ uint8_t speedzhuanwan2=  25;        //低速时寻找信标转弯速度
 //uint8_t speedbizhang=   6;          //避障减速    
 //int8_t speedxinbi1=     -5;            //信标避障减速
 
-    
-uint8_t speedjiasu=     45;            //远离信标 直线加速  
+//信标避障的速度  比较稳 不够快    
+//uint8_t speedjiasu=     45;            //远离信标 直线加速  
+//uint8_t speedxinjiansu= 20;        //靠近信标 进行减速    
+//uint8_t speedxinjia=    28;          //靠近信标 速度太慢 而加速
+//uint8_t speeddazhuan=   20;         //找不到信标大转弯速度    
+//uint8_t speedbizhang=   6;          //避障减速    
+//int8_t speedxinbi1=     10;            //信标避障减速
+//     
+
+//    
+//uint8_t speedxinjia2=    28;          //靠近信标 速度太慢 而加速
+//uint8_t speedxinjiansu2= 18;        //靠近信标 进行减速
+//uint8_t speedjiasu2=     45;            //远离信标 直线加速
+//int8_t speedxinbi2=     12;            //信标避障减速
+ 
+uint8_t speedjiasu=     58;            //远离信标 直线加速  
 uint8_t speedxinjiansu= 20;        //靠近信标 进行减速    
 uint8_t speedxinjia=    28;          //靠近信标 速度太慢 而加速
 uint8_t speeddazhuan=   20;         //找不到信标大转弯速度    
-uint8_t speedbizhang=   6;          //避障减速    
+uint8_t speedbizhang=   4;          //避障减速    
 int8_t speedxinbi1=     10;            //信标避障减速
      
 
     
 uint8_t speedxinjia2=    28;          //靠近信标 速度太慢 而加速
 uint8_t speedxinjiansu2= 18;        //靠近信标 进行减速
-uint8_t speedjiasu2=     45;            //远离信标 直线加速
-int8_t speedxinbi2=     12;            //信标避障减速
-    
-//  //设置速度：稳速   始终保留一组能稳定运行的
-//uint8_t speedzhuanwan=  15;        //寻找信标转弯速度
-//uint8_t speedjiasu=     35;            //远离信标 直线加速
-//uint8_t speedxinjiansu= 16;        //靠近信标 进行减速
-//uint8_t speedxinjia=    28;          //靠近信标 速度太慢 而加速
-//uint8_t speeddazhuan=   20;         //找不到信标大转弯速度
-//    
-//uint8_t speedbizhang=   6;          //避障减速
-//    
-//uint8_t speedxinbi1=     7;            //信标避障减速
-//uint8_t speedxinbi2=     7;            //信标避障减速 
-
-
-
-//  //设置速度：稳速   始终保留一组能稳定运行的
-//uint8_t speedzhuanwan=  17;        //寻找信标转弯速度
-//uint8_t speedjiasu=     27;            //远离信标 直线加速
-//uint8_t speedxinjiansu= 16;        //靠近信标 进行减速
-//uint8_t speedxinjia=    26;          //靠近信标 速度太慢 而加速
-//uint8_t speeddazhuan=   20;         //找不到信标大转弯速度
-//    
-//uint8_t speedbizhang=   7;          //避障减速
-//    
-//uint8_t speedxinbi1=     9;            //信标避障减速
-//uint8_t speedxinbi2=     9;            //信标避障减速    
-//    
-
-   
-
-
-
-      
-    
-//uint8_t speedxinbijia=  23;          //信标避障时太慢，则加速
+uint8_t speedjiasu2=     50;            //远离信标 直线加速
+int8_t speedxinbi2=     7;            //信标避障减速
+     
+ 
 
 float pianchak=1.1;//边缘切过时的偏差计算系数
 
@@ -150,7 +122,7 @@ float k11=1;
 
 int c=0;
 
-uint16_t acc_stop2=42;//加速结束时的行坐标  
+uint16_t acc_stop2=38;//加速结束时的行坐标  
 float k12=1.4;
 
 

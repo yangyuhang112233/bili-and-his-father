@@ -207,8 +207,34 @@ cha=speedx-avespeed;
                }
                                       
                break;
+               
+                  
+               case 4://靠近信标进行信标避障
+                k1=1;   
+               if(qd_left_value+qd_left_value>22)
+               { Kp= 1700;
+               
+               
+                Kir= 0;
+                Kil= 0;
+               
+               }
+               else
+               {
+                Kp= 600;
+                   
+                Kir= 3;
+                Kil= 3;
+                   
+                leftsum=800;
+                rightsum=800;
+               }
+                                      
+               break;
               }      
-        }            
+         }   
+              
+                    
   
 //                Kp= 600;Ki= 2;
 //                leftsum=2000;
@@ -262,7 +288,7 @@ cha=speedx-avespeed;
 			pwm_out2=-doorslow;
 		}
 	     
-	    if(pwm_out1 > 0)
+	   if(pwm_out1 > 0)
 		{
 	    FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,0 );
         FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,pwm_out1);

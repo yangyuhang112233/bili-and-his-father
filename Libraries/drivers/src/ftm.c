@@ -121,7 +121,7 @@ uint32_t FTM_QD_QuickInit(uint32_t MAP, FTM_QD_PolarityMode_Type polarity, FTM_Q
     QuickInit_Type * pq = (QuickInit_Type*)&(MAP);
     
     /* init moudle */
-    _FTM_InitBasic(pq->ip_instance, FTM_MOD_MOD_MASK, kFTM_ClockDiv1);
+    _FTM_InitBasic(pq->ip_instance, FTM_MOD_MOD_MASK, kFTM_ClockDiv16);
     
     /* set FTM to QD mode */
     FTM_SetMode(pq->ip_instance, 0, kFTM_Mode_QuadratureDecoder);
