@@ -7,8 +7,8 @@ uint8_t  kaiqi=0;
 //4 2 5 3 1 4 2 5 1 3
 
 //避障方式路径规划： 
-uint8_t turn[20]={3,3,3,4,4,4,4,4,4,3,3,4,4,3,3,3,3,3,3,3};  //路径规划： 1 避障左转； 2 避障右转； 3 左切入； 4 右切入；
-uint8_t turn_route[20]={3,3,3,4,4,4,4,4,3,3,3,4,4,3,3,3,3,3,3,3};	//认为设定的lookfor 车辆转向;
+uint8_t turn[20]={3,3,4,3,3,3,4,4,4,3,4,3,4,3,3,3,3,3,3,3};  //路径规划： 1 避障左转； 2 避障右转； 3 左切入； 4 右切入；
+uint8_t turn_route[20]={3,3,3,4,4,4,4,4,3,3,3,4,3,3,3,3,3,3,3,3};	//认为设定的lookfor 车辆转向;
 
 //uint8_t turn[20]={1,1,1,2,2,2,2,1,1,1,1,2,3,1,1,1,3,3,3,3};  //路径规划： 1 避障左转； 2 避障右转； 3 左切入； 4 右切入；
 
@@ -55,11 +55,11 @@ uint8_t speedzhuanwan2=  25;        //低速时寻找信标转弯速度
 //int8_t speedxinbi2=     12;            //信标避障减速
  
 uint8_t speedjiasu=     58*SPEED_RATE;            //远离信标 直线加速  
-uint8_t speedxinjiansu= 20*SPEED_RATE;        //靠近信标 进行减速    
+uint8_t speedxinjiansu= 20;        //靠近信标 进行减速    
 uint8_t speedxinjia=    28*SPEED_RATE;          //靠近信标 速度太慢 而加速
 uint8_t speeddazhuan=   20*SPEED_RATE;         //找不到信标大转弯速度    
 uint8_t speedbizhang=   2*SPEED_RATE;          //避障减速    
-int8_t speedxinbi1=     10*SPEED_RATE;            //信标避障减速
+int8_t speedxinbi1=     15;            //信标避障减速
      
 
     
@@ -77,8 +77,8 @@ uint16_t anglemid=SERVO_MIDDLE;//舵机中值
 uint16_t angleleft=SERVO_MIDDLE+70;//舵机左极限 
 uint16_t angleright=SERVO_MIDDLE-70;//舵机右极限 
 
-uint16_t hide_left=SERVO_MIDDLE+50;//避障的左转打角+50
-uint16_t hide_right=SERVO_MIDDLE-50;//避障的右转打角-50
+uint16_t hide_left=SERVO_MIDDLE+60;//避障的左转打角+50
+uint16_t hide_right=SERVO_MIDDLE-70;//避障的右转打角-50
 
 uint16_t acc_left=SERVO_MIDDLE+15;//加速段舵机打角左限+15
 uint16_t acc_right=SERVO_MIDDLE-15;//加速度段舵机打角右限-15

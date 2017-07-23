@@ -143,23 +143,25 @@ static uint8_t count123;
             //  if(count123!=count1)
        if(state==0&&laststate==3)
        {
-           count123=count1;            
-           if(anglex==angleright)
+           count123=count1;   
+      if(anglex==angleleft)
            {
-        FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,0 );
-        FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,4000);
-        FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH3, 2500 ); 
-        FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH2, 0);  
+           Motor_Control(25,30);		//13,15
+//            FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,0 );
+//            FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,4000);  
+//            FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH3, 5000 ); 
+//            FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH2, 0);
+           }		   
+           else 
+           {
+			   Motor_Control(60,55);	//20, 13
+//        FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,0 );
+//        FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,5000);
+//        FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH3, 3000 ); 
+//        FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH2, 0);  
            }
            
-         else if(anglex==angleleft)
-           {
-           
-            FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,0 );
-            FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,2000);  
-            FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH3, 4000 ); 
-            FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH2, 0);
-           }
+        
 //          else
 //          {
 //              
