@@ -5,6 +5,8 @@
 #include "stdint.h"
 #include "stdbool.h"
 
+#define SERVO_MIDDLE 768
+#define SPEED_RATE 1.5
 
 //改用变量的形式
 
@@ -58,6 +60,7 @@ extern bool xinbiaobizhang;//信标避障标志位
 extern float k11;
 extern float k12;
 extern uint8_t turn[20];
+extern uint8_t turn_route[20];
 extern uint16_t xiangsuzh;
 extern uint16_t acc_stop2;//加速结束时的行坐标
 extern uint16_t acc_stop1;

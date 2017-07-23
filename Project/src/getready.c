@@ -8,13 +8,9 @@ void PIT1_HandlerU( void )
 	tt++;
 }
 
- void getready()
- {
-    
-     
-     
-     
-  DelayInit();
+void getready()
+{
+	DelayInit();
     
     /* PTA4设置成输入，防止死机 */
     GPIO_QuickInit (HW_GPIOA ,4,kGPIO_Mode_OPP);
@@ -56,19 +52,19 @@ void PIT1_HandlerU( void )
     FTM_PWM_ChangeDuty(HW_FTM0, HW_FTM_CH2, 0); 
     FTM_PWM_ChangeDuty(HW_FTM0, HW_FTM_CH3, 0);
 		
-		 //初始化pit模块的0通道，产生20ms的中断
-      PIT_QuickInit(HW_PIT_CH0, 20000);
-      PIT_CallbackInstall(HW_PIT_CH0, QD_value ); //注册通道0的回调函数为：QD_value（）
-      PIT_ITDMAConfig(HW_PIT_CH0, kPIT_IT_TOF, ENABLE); //开起模块0通道中断 
+	/* 初始化pit模块的0通道，产生20ms的中断 */
+	PIT_QuickInit(HW_PIT_CH0, 20000);
+	PIT_CallbackInstall(HW_PIT_CH0, QD_value ); //注册通道0的回调函数为：QD_value（）
+	PIT_ITDMAConfig(HW_PIT_CH0, kPIT_IT_TOF, ENABLE); //开起模块0通道中断 
         
-        //初始化pit模块的1通道，产生1ms的中断
-	  PIT_QuickInit(HW_PIT_CH1, 1000);
-      PIT_CallbackInstall(HW_PIT_CH1, PIT1_HandlerU ); //注册通道1的回调函数为：PIT1_HandlerU（）		
-	  PIT_ITDMAConfig(HW_PIT_CH1, kPIT_IT_TOF, ENABLE); //开起模块1通道中断 
+    /* 初始化pit模块的1通道，产生1ms的中断 */
+	PIT_QuickInit(HW_PIT_CH1, 1000);
+	PIT_CallbackInstall(HW_PIT_CH1, PIT1_HandlerU ); //注册通道1的回调函数为：PIT1_HandlerU（）		
+	PIT_ITDMAConfig(HW_PIT_CH1, kPIT_IT_TOF, ENABLE); //开起模块1通道中断 
 		
   
 		//turn_side=TurnSide_Array[0];
-    //小液晶初始化
+    /* 小液晶初始化 */
     LCD_Init();
     
     //摄像头初始化
@@ -171,138 +167,129 @@ void Printf()
 }
 void duqubama()
 {
-		if(GPIO_ReadBit(HW_GPIOB, 8)==0)    //拨码开关控制  
-       {
-		   bama[0]=1;
-       }      
-       	if(GPIO_ReadBit(HW_GPIOB, 9)==0)    //拨码开关控制  
-       {
-		 bama[1]=1;
-       }
-       	if(GPIO_ReadBit(HW_GPIOB, 10)==0)    //拨码开关控制  
-       {
+	if(GPIO_ReadBit(HW_GPIOB, 8)==0)    //拨码开关控制  
+	{
+		bama[0]=1;
+	}      
+	if(GPIO_ReadBit(HW_GPIOB, 9)==0)    //拨码开关控制  
+	{
+		bama[1]=1;
+	}
+	if(GPIO_ReadBit(HW_GPIOB, 10)==0)    //拨码开关控制  
+	{
 		bama[2]=1;
-       }
-       	if(GPIO_ReadBit(HW_GPIOB, 11)==0)    //拨码开关控制  
-       {
-		 bama[3]=1;
-       }   
-       bamakaiguan=bama[0]+2* bama[1]+2*2*bama[2]+2*2*2*bama[3];
+	}
+	if(GPIO_ReadBit(HW_GPIOB, 11)==0)    //拨码开关控制  
+	{
+		bama[3]=1;
+	}   
+	bamakaiguan=bama[0]+2* bama[1]+2*2*bama[2]+2*2*2*bama[3];
 }
 void bamaswitch()
 {
-    
-             //拔码开关状态情况
+	//拔码开关状态情况
 
-    switch(bamakaiguan)
-{
-         
-case 1:  //打开led显示屏
-Printf();
-        break;
-case  2://设置低速跑
-                     
-speedzhuanwan=15;        //寻找信标转弯速度
-speedjiasu=15;            //远离信标 直线加速
-speedxinjiansu=15;        //靠近信标 进行减速
-speedxinjia=15;          //靠近信标 速度太慢 而加速
-speeddazhuan=15;         //找不到信标大转弯速度
-speedbizhang=15;          //避障减速
-speedxinbi1=15;            //信标避障减速
-speedxinbi2=15;            //信标避障减速
+	switch(bamakaiguan)
+	{
+		case 1:  //打开led显示屏
+		Printf();
+		break;
+		
+		case  2://设置低速跑
+		speedzhuanwan=15;        //寻找信标转弯速度
+		speedjiasu=15;            //远离信标 直线加速
+		speedxinjiansu=15;        //靠近信标 进行减速
+		speedxinjia=15;          //靠近信标 速度太慢 而加速
+		speeddazhuan=15;         //找不到信标大转弯速度
+		speedbizhang=15;          //避障减速
+		speedxinbi1=15;            //信标避障减速
+		speedxinbi2=15;            //信标避障减速
 
- speedxinjia2=    15;          //靠近信标 速度太慢 而加速
- speedxinjiansu2= 15;        //靠近信标 进行减速
- speedjiasu2=     15;            //远离信标 直线加速
- speedxinbi2=     15;    
+		speedxinjia2=    15;          //靠近信标 速度太慢 而加速
+		speedxinjiansu2= 15;        //靠近信标 进行减速
+		speedjiasu2=     15;            //远离信标 直线加速
+		speedxinbi2=     15;    
 
-//speedxinbijia=15;          //信标避障时太慢，则加速                
+		//speedxinbijia=15;          //信标避障时太慢，则加速                
 
-      break; 
-         
-case 4:
-sending3();
-        
-      break;   
-        
-case 8:   //看7725图像
-    
-       //7725摄像头采集图像  
-     ov7725_Get_Imge();
-     img_extract(img, CCDBufferPool ,OV7725_H*(OV7725_W/8));
+		break; 
 
-    uint8_t colour[2] = {0xfe, 0x00};
-    uint8_t temp=0;
-    for(uint16_t i=0;i<(OV7725_H*OV7725_W);i++)
-    {
-        if(i==(temp*OV7725_W +center[temp]))
-        {
-            temp++;
-            UART_WriteByte (HW_UART0 ,0);
-        }
-        else
-            UART_WriteByte (HW_UART0 ,colour [img[i]]);
-    }
-    UART_WriteByte(HW_UART0,0xff);
- break;
-      
-    case  3:
-                 xideng=1;    
-                
+		case 4:
+		sending3();
+		break;   
 
-      break;
-        case  5:
-                 xideng=5;    
-               
-      break;
-        
-       case  7:
-           
-       xideng=5;    
- speedzhuanwan=15;        //寻找信标转弯速度
-speedjiasu=15;            //远离信标 直线加速
-speedxinjiansu=15;        //靠近信标 进行减速
-speedxinjia=15;          //靠近信标 速度太慢 而加速
-speeddazhuan=15;         //找不到信标大转弯速度
-speedbizhang=15;          //避障减速
-speedxinbi1=15;            //信标避障减速
-speedxinbi2=15;            //信标避障减速
-//speedxinbijia=15;          //信标避障时太慢，则加速  
-      break;
-        
-default:break;    
-}
-         
-         
-         
+		case 8:   //看7725图像
+
+		//7725摄像头采集图像  
+		ov7725_Get_Imge();
+		img_extract(img, CCDBufferPool ,OV7725_H*(OV7725_W/8));
+		uint8_t colour[2] = {0xfe, 0x00};
+		uint8_t temp=0;
+		for(uint16_t i=0;i<(OV7725_H*OV7725_W);i++)
+		{
+			if(i==(temp*OV7725_W +center[temp]))
+			{
+				temp++;
+				UART_WriteByte (HW_UART0 ,0);
+			}
+			else
+				UART_WriteByte (HW_UART0 ,colour [img[i]]);
+		}
+		UART_WriteByte(HW_UART0,0xff);
+		break;
+
+		case  3:
+		xideng=1;    
+		break;
+		
+		case  5:
+		xideng=5;    
+		break;
+
+		case  7:
+		xideng=5;    
+		speedzhuanwan=15;        //寻找信标转弯速度
+		speedjiasu=15;            //远离信标 直线加速
+		speedxinjiansu=15;        //靠近信标 进行减速
+		speedxinjia=15;          //靠近信标 速度太慢 而加速
+		speeddazhuan=15;         //找不到信标大转弯速度
+		speedbizhang=15;          //避障减速
+		speedxinbi1=15;            //信标避障减速
+		speedxinbi2=15;            //信标避障减速
+		//speedxinbijia=15;          //信标避障时太慢，则加速  
+		break;
+
+		default:break;    
+	}
 }
 
 void firstimage()
 {
-   while(1)
-{
-    ov7620_img_flag = OV7620_STATE_IDLE;            //空闲状态，开始采集图像
-    PORTE->ISFR = ~0; //清除后置摄像头标志位 	
-    enable_irq(OV7620_VSYN_GPIO_IRQ);
-    while(ov7620_img_flag != OV7620_STATE_COMPLETE);            //等待图像采集完毕
-    
-        int count=0;
-            for(int ii=0;ii<OV7620_H-2;ii++)	
-    {     
-       for(int jj=0;jj<OV7620_W-1;jj++)
-       {
-         if(CCD_Image[ii][jj]>=door7620)
-         {   
-			 count ++;
-         }      
-       }
-  }  
-        
-     ov7725_Get_Imge();
-     img_extract(img, CCDBufferPool ,OV7725_H*(OV7725_W/8));
-   
-    if(count>2)break;       
-}
+	while(1)
+	{
+		ov7620_img_flag = OV7620_STATE_IDLE;            //空闲状态，开始采集图像
+		PORTE->ISFR = ~0; //清除后置摄像头标志位 	
+		enable_irq(OV7620_VSYN_GPIO_IRQ);
+		
+		while(ov7620_img_flag != OV7620_STATE_COMPLETE);            //等待图像采集完毕
+
+		int count=0;
+		for(int ii=0;ii<OV7620_H-2;ii++)	
+		{     
+			for(int jj=0;jj<OV7620_W-1;jj++)
+			{
+				if(CCD_Image[ii][jj]>=door7620)
+				{   
+					count ++;
+				}      
+			}
+		}  
+
+		ov7725_Get_Imge();
+		img_extract(img, CCDBufferPool ,OV7725_H*(OV7725_W/8));
+
+		if(count>2)break;       
+	}
 
 }  
 //   
@@ -320,20 +307,22 @@ void firstimage()
 
 void startimage()
 {
-    if(jioushu==0)jioushu=1;
+    if(jioushu==0)
+	{
+		jioushu=1;
+	}
     else 
     {
-    jioushu=0;
+		jioushu=0;
     }
 
-     if(jioushu==1)
+    if(jioushu==1)
     {
        DMA_InitStruct1.dAddr = (uint32_t)CCD_Image;      
     }
-    
     else
     {
-    DMA_InitStruct1.dAddr = (uint32_t)CCD_Image22;  
+		DMA_InitStruct1.dAddr = (uint32_t)CCD_Image22;  
     }
     
     //7620摄像头开始采集图像
@@ -343,34 +332,26 @@ void startimage()
    	    
    
      //7725摄像头开始采集图像
-    ov7725_img_flag = IMG_START;                    //开始采集图像
+//    ov7725_img_flag = IMG_START;                    //开始采集图像
     PORTA->ISFR = ~0;                               //写1请中断标志位
     enable_irq(PORTA_IRQn);                         //允许PTA的中断
-    
-    
 }
 
  void endimage()
 {
-    
-      //7725 采集图像结束       
-    while(ov7725_img_flag != IMG_FINISH)            //等待图像采集完毕
-    {
-        if(ov7725_img_flag == IMG_FAIL)           //加入图像采集错误，则重新采集
-        {
-            ov7725_img_flag = IMG_START;            //开始采集图像
-            PORTA->ISFR = ~0;                       //写1请中断标志位
-            enable_irq(PORTA_IRQn);                 //允许PTA的中断
-        }
-    }  
-       
-
-     img_extract(img, CCDBufferPool ,OV7725_H*(OV7725_W/8));
-
-    
-    
-    //7620 采集图像结束  
-    while(ov7620_img_flag != OV7620_STATE_COMPLETE);   //等待图像采集完毕           
+	//7725 采集图像结束       
+	while(ov7725_img_flag != IMG_FINISH)            //等待图像采集完毕
+	{
+		if(ov7725_img_flag == IMG_FAIL)           //加入图像采集错误，则重新采集
+		{
+			ov7725_img_flag = IMG_START;            //开始采集图像
+			PORTA->ISFR = ~0;                       //写1请中断标志位
+			enable_irq(PORTA_IRQn);                 //允许PTA的中断
+		}
+	}  
+	img_extract(img, CCDBufferPool ,OV7725_H*(OV7725_W/8));
+	//7620 采集图像结束  
+	while(ov7620_img_flag != OV7620_STATE_COMPLETE);   //等待图像采集完毕           
 } 
 
 

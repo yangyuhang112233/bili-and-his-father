@@ -7,82 +7,91 @@ uint16_t xinbiao0[10];//过去的信标像素值
 uint8_t xinbiaobiaozhi=0;//判定是否信标像素个数超过400
 uint8_t xidengshu=0;//熄过得灯的个数
 int can=0;
+uint8_t laststate=0;
 
 void julican()
 {
-    int avespeed;
- avespeed=(qd_left_value+qd_right_value)/2;
-     
-          
-//     if(avespeed<40)
-//     {         
-//     //避障行坐标 低速好用
-//     }
-//     else
-//     {
-//      //快速好用
-//      xinbiaobizhang_h=32;//信标避障行坐标   
-//      k11=1.02;
-//     }
- // 7 1 8 2 10 1
-     switch(count1)
-     {
-         case 0:  
-      can=-1;
-       break;             
-          case 1:  
-       can=0;
-       break;
-          case 2:
-           can=0;   
-       break;
-         case 3:  
-   can=0;
-       break;
-         case 4:  
-  can=0;
-       break;
-         case 5:  
- can=0;
-       break;
-        case 6:  
- can=-2;
-       break;
-          case 7:  
- can=2;
-       break;
-          case 8:  
- can=0;
-       break;
-         case 9:  
- can=-1;
-       break;
-                                                                                          
-           case 10:  
- can=0;
-       break;
-           case 11:  
- can=0;
-       break;
-            case 12:  
- can=0;
-       break;
-                                                                                                                              
-           default:
-             break;
-     }
-       
+	int avespeed;
+	
+	avespeed=(qd_left_value+qd_right_value)/2;
+
+
+	//     if(avespeed<40)
+	//     {         
+	//     //避障行坐标 低速好用
+	//     }
+	//     else
+	//     {
+	//      //快速好用
+	//      xinbiaobizhang_h=32;//信标避障行坐标   
+	//      k11=1.02;
+	//     }
+	// 7 1 8 2 10 1
+	switch(count1)
+	{
+		case 0:  
+		can=-1;
+		break;  
+		
+		case 1:  
+		can=0;
+		break;
+		
+		case 2:
+		can=0;   
+		break;
+		
+		case 3:  
+		can=0;
+		break;
+		
+		case 4:  
+		can=0;
+		break;
+		
+		case 5:  
+		can=0;
+		break;
+		
+		case 6:  
+		can=-2;
+		break;
+		
+		case 7:  
+		can=2;
+		break;
+		
+		case 8:  
+		can=0;
+		break;
+		
+		case 9:  
+		can=-1;
+		break;
+																			  
+		case 10:  
+		can=0;
+		break;
+		
+		case 11:  
+		can=0;
+		break;
+		
+		case 12:  
+		can=0;
+		break;
+																										  
+		default:
+		break;
+	}
 }
 
+void speedset()
+{
+//这里可以设置任意参数，不只速度
 
-
-
- void speedset()
- {
-     //这里可以设置任意参数，不只速度
-     
-     switch(count1)
-     {
+switch(count1)
+{
 //         
 //               case 1:
 //    speedjiasu=     15;           //远离信标 直线加速  
@@ -95,10 +104,10 @@ void julican()
 //    speedxinjiansu= 16;           //靠近信标 进行减速   
 //    speedxinjia=    25;          //靠近信标 速度太慢 而加速  
 //         break;
-          
-         
-         
-         
+
+
+
+
 //         case 0:
 //             //稳速情况
 ////             speedjiasu=     27;            //远离信标 直线加速
@@ -166,66 +175,55 @@ void julican()
 ////         
 ////             break;
 //        
-         default:
-             break;
-     }
-     
- 
- }
- 
+default:
+break;
+}
+
+
+}
+
 //count1为0，则正前往第一个灯；为1，则处于 进入第一个灯的信标避障 和  进入第二个灯的信标避障之间。
 void pass()
 {
-         //进入信标避障时加1  
-       
-    //因为速度比较快，靠近有的灯有的时候抖得厉害，没有进入信标就熄灭了灯进入下一个找灯了
-   //调试方法，看经过了几个避障状态，记录下来，最后停车后通过led显示
-//     if(forestate!=3&&state==3)
-//      {   
-//          count1++;        
-//      }
-//         if(forestate==2&&state==0)
-//      {   
-//          count1++;        
-//      }
-    
-      //聪明的做法是在这里直接处理像素值和行坐标这些原始量，更加灵活
-if(xinbiaobiaozhi==0)
-   {
-      if(xinbiaoxiangsu>350&&target_h<23)
-      {
-      xinbiaobiaozhi=1;
-      
-      }
-   }
-else
-   {
-     if(xinbiaoxiangsu<180)
-     {
-      count1++;
-       xidengshu++;
-      xinbiaobiaozhi=0;
-     }         
-   }
-  
+	//进入信标避障时加1  
 
-  
-      if(count1==20)count1=0;
-   
-   
-         //停止运动
-      if(xidengshu==13)   
-      {        
-       stopmove();
-      }  
-   
-   
-   
-   
-   
+	//因为速度比较快，靠近有的灯有的时候抖得厉害，没有进入信标就熄灭了灯进入下一个找灯了
+	//调试方法，看经过了几个避障状态，记录下来，最后停车后通过led显示
+	//     if(forestate!=3&&state==3)
+	//      {   
+	//          count1++;        
+	//      }
+	//         if(forestate==2&&state==0)
+	//      {   
+	//          count1++;        
+	//      }
+
+	//聪明的做法是在这里直接处理像素值和行坐标这些原始量，更加灵活
+	if(xinbiaobiaozhi==0)
+	{
+		if(xinbiaoxiangsu>350&&target_h<23)
+		{
+			xinbiaobiaozhi=1;
+		}
+	}
+	else
+	{
+		if(xinbiaoxiangsu<180)
+		{
+			count1++;
+			xidengshu++;
+			xinbiaobiaozhi=0;
+		}         
+	}
+	if(count1==20)count1=0;
+	//停止运动
+	if(xidengshu==13)   
+	{        
+		stopmove();
+	}  
 }
-      //在信标避障的临界点会有毛刺，信标的行坐标会有微小跳动，则信标状态会有跳动，造成计算了两次信标避障，算成了两个灯
-      //对于毛刺问题，可以根据前后4个状态的优势状态（数量比较多的状态）来判定状态 
+//在信标避障的临界点会有毛刺，信标的行坐标会有微小跳动，则信标状态会有跳动，造成计算了两次信标避障，算成了两个灯
+//对于毛刺问题，可以根据前后4个状态的优势状态（数量比较多的状态）来判定状态 
 //        if(xinbiao0[0]<400&&xinbiaoxiangsu>400)
 //      {   
 //          count1++;        
@@ -299,39 +297,42 @@ void jiajiansujuli()//根据第一次看到信标时信标的行坐标设置
   //储存前一个状态的变量
 void prestate()
 {   
-    jishuwei++;
-    if(jishuwei>200)
+	jishuwei++;
+	if(jishuwei>200)
+	{
+		jishuwei=0;
+	}
+	
+	if(forestate!=state)
     {
-    jishuwei=0;
-    }
-    
-    
- forestate=state;
- foreangle=anglex;
+    laststate=forestate;
+    } 
+	forestate=state;
+	foreangle=anglex;
 
-    
-    //还可以在设置一个数组，储存的数字是过去经过的变化的状态
-     //存储过去的状态 0为刚刚的状态 
-    
-   for(uint8_t i=4;i>0;i--)
-    {
-    count11[i]=count11[i-1];
-    }
-    count11[0]=count1;
+	//还可以在设置一个数组，储存的数字是过去经过的变化的状态
+	//存储过去的状态 0为刚刚的状态 
 
-    
-    for(uint8_t i=9;i>0;i--)
-    {
-    state0[i]=state0[i-1];
-    }
-    state0[0]=state;
-    
-    
-       for(uint8_t i=9;i>0;i--)
-    {
-    xinbiao0[i]=xinbiao0[i-1];
-    }
-    xinbiao0[0]=xinbiaoxiangsu;
+	for(uint8_t i=4;i>0;i--)
+	{
+		count11[i]=count11[i-1];
+	}
+	
+	count11[0]=count1;
+
+	for(uint8_t i=9;i>0;i--)
+	{
+		state0[i]=state0[i-1];
+	}
+	
+	state0[0]=state;
+
+	for(uint8_t i=9;i>0;i--)
+	{
+		xinbiao0[i]=xinbiao0[i-1];
+	}
+	
+	xinbiao0[0]=xinbiaoxiangsu;
 }
 
 

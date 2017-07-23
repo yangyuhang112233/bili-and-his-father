@@ -7,8 +7,8 @@ uint16_t countbz7620=0;//7620障碍物像素个数
 
 
    //判断是否找到信标并找出信标的横纵坐标
- void findpoint()
- {
+void findpoint()
+{
    //  getimage();//同时采集7620和7725的图像  可更改为采集图像的同时处理数据
    
      uint16_t ii,jj,count;
@@ -21,58 +21,57 @@ uint16_t countbz7620=0;//7620障碍物像素个数
      target_flag = 0;
 
      //图像信息处理
-if(jioushu==0)
-{
-      for(ii=0;ii<OV7620_H-2;ii++)	
-  {     
-       for(jj=0;jj<OV7620_W-1;jj++)
-     {
-         if(CCD_Image[ii][jj]>=door7620)
-         {
-             sumh = sumh + ii ;
-			 suml = suml + jj ;
-			 count ++;
-         }
-         
-     }
-  }   
-}
-else
-{
-      for(ii=0;ii<OV7620_H-2;ii++)	
-  {     
-       for(jj=0;jj<OV7620_W-1;jj++)
-     {
-         if(CCD_Image22[ii][jj]>=door7620)
-         {
-             sumh = sumh + ii ;
-			 suml = suml + jj ;
-			 count ++;
-         }
-         
-     }
-  } 
-}
+	if(jioushu==0)
+	{
+		for(ii=0;ii<OV7620_H-2;ii++)	
+		{     
+			for(jj=0;jj<OV7620_W-1;jj++)
+			{
+				if(CCD_Image[ii][jj]>=door7620)
+				{
+					sumh = sumh + ii ;
+					suml = suml + jj ;
+					count ++;
+				}
+			}
+		}   
+	}
+	else
+	{
+		for(ii=0;ii<OV7620_H-2;ii++)	
+		{     
+			for(jj=0;jj<OV7620_W-1;jj++)
+			{
+				if(CCD_Image22[ii][jj]>=door7620)
+				{
+					sumh = sumh + ii ;
+					suml = suml + jj ;
+					count ++;
+				}
 
-     //判断是否找到信标
-          if(count>2)
-          {
-              target_l=suml /count ;
-              target_h=sumh /count ;
-              target_flag = 1;            
-          }
+			}
+		} 
+	}
 
-     xinbiaoxiangsu=count;
+	//判断是否找到信标
+	if(count>2)
+	{
+		target_l=suml /count ;
+		target_h=sumh /count ;
+		target_flag = 1;            
+	}
 
-      //判断是否停止普通避障
-      stopba=0;
+	xinbiaoxiangsu=count;
+
+	//判断是否停止普通避障
+	stopba=0;
         
                                                   
      //根据count1值确定是切过还是避障，确定避障行坐标阀值   根据信标横坐标和速度判断是否进行信标避障 
-      uint8_t xinbiaobizhang_hh;
+	uint8_t xinbiaobizhang_hh;
           
-      static bool a=0;
-      avespeed=(qd_left_value+qd_right_value)/2;
+	static bool a=0;
+	avespeed=(qd_left_value+qd_right_value)/2;
      
 //          
 //     if(avespeed<28)
@@ -87,41 +86,39 @@ else
 //      xinbiaobizhang_h=32;//信标避障行坐标   
 //      k11=1.15;
 //     }
-      xinbiaobizhang_h=35;//信标避障行坐标   
-      k11=1.2;
-      julican();
+	xinbiaobizhang_h=35;//信标避障行坐标   
+	k11=5;
+	julican();
           
       //调常数c 
           
     //进入信标避障后速度会变化，计算的避障行坐标也会变化。只能采用第一次计算的信标避障行坐标
-      if(a==0)
-    {
-        
-      xinbiaobizhang=0;
-      xinbiaoqieguo=0;
-        
-            if(turn[count1]==1||turn[count1]==2)
-          {
-                xinbiaobizhang_hh=can+xinbiaobizhang_h+avespeed/k11;         
-                if(target_h<xinbiaobizhang_hh)
-               {
-                  xinbiaobizhang=1;a=1;
-               }   
-              }  
-              
-         
-           else
-         {         
-             if(target_h<xinbiaoqieguo_h)
-          {
-           xinbiaoqieguo=1;a=1;
-          }
-         }
-         
-    }
-         if(xinbiaoxiangsu<180)a=0;
-         
-    
+	if(a==0)
+	{
+		xinbiaobizhang=0;
+		xinbiaoqieguo=0;
+
+		if(turn[count1]==1||turn[count1]==2)
+		{
+			xinbiaobizhang_hh=can+xinbiaobizhang_h+avespeed/k11;         
+			if(target_h<xinbiaobizhang_hh)
+			{
+				xinbiaobizhang=1;a=1;
+			}   
+		}  
+		else
+		{         
+			if(target_h<xinbiaoqieguo_h)
+			{
+				xinbiaoqieguo=1;a=1;
+			}
+		}
+
+	}
+	if(xinbiaoxiangsu<180)
+	{
+		a=0; 
+	}		
 //        //之前状态切换有问题是因为这里距离阀值在变化，同时使标志位变化，让经过灯的数量误判断
 //         if(target_flag==1)
 //        {
@@ -133,9 +130,7 @@ else
 //           xinbiaobizhang=1;
 //         }
 //        }
-        
-     
- }
+}
   
  
   //判断是否需要避障
