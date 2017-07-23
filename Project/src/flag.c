@@ -87,7 +87,7 @@ void findpoint()
 //      k11=1.15;
 //     }
 	xinbiaobizhang_h=35;//信标避障行坐标   
-	k11=4;
+	k11=2.5;
 	//julican();
           
       //调常数c 

@@ -6,7 +6,7 @@
 #include "stdbool.h"
 
 #define SERVO_MIDDLE 768
-#define SPEED_RATE 1.5
+#define SPEED_RATE 6
 
 //改用变量的形式
 
