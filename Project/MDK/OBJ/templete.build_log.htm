@@ -27,14 +27,51 @@ Project File Date:  07/23/2017
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 4 (build 422)', folder: 'D:\Program Files\Keil_v5\ARM\ARMCC\Bin'
 Build target 'mk60d10'
-".\OBJ\templete.axf" - 0 Error(s), 0 Warning(s).
+compiling move.c...
+..\src\canshu.h(107): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\getready.h(18): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\move.h(19): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\response.h(25): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\pid.h(17): warning:  #1295-D: Deprecated declaration Servo_Control - give arg types
+  void Servo_Control();
+..\src\pid.h(24): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\flag.h(12): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\qita.h(22): warning:  #1295-D: Deprecated declaration jiajiansujuli - give arg types
+  void jiajiansujuli();//动态设置加减速距离
+..\src\qita.h(24): warning:  #1295-D: Deprecated declaration julican - give arg types
+  void julican();
+..\src\qita.h(27): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\head.h(36): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\src\move.c(12): warning:  #177-D: variable "ab"  was declared but never referenced
+      static bool ab=0;
+..\src\move.c(23): warning:  #177-D: variable "anglec"  was declared but never referenced
+      uint16_t anglec;//根据角度选择差速
+..\src\move.c(139): warning:  #550-D: variable "count123"  was set but never used
+  static uint8_t count123;
+..\src\move.c(232): warning:  #1-D: last line of file ends without a newline
+    
+..\src\move.c: 16 warnings, 0 errors
+linking...
+Program Size: Code=32988 RO-data=2848 RW-data=5328 ZI-data=73144  
+FromELF: creating hex file...
+".\OBJ\templete.axf" - 0 Error(s), 16 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   .\RTE\_mk60d10
   D:\Program Files\Keil_v5\ARM\PACK\Keil\Kinetis_K60_DFP\1.2.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

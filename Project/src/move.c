@@ -141,23 +141,23 @@ static uint8_t count123;
 
             
             //  if(count123!=count1)
-       if(state==0&&laststate==4)
+       if(state==0&&laststate==3)
        {
            count123=count1;            
            if(anglex==angleright)
            {
-        FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,10000 );
-        FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,0);
-        FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH3, 0 ); 
-        FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH2, 3000);  
+        FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,0 );
+        FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,4000);
+        FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH3, 2500 ); 
+        FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH2, 0);  
            }
            
          else if(anglex==angleleft)
            {
            
             FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,0 );
-            FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,3000);  
-            FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH3, 10000 ); 
+            FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,2000);  
+            FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH3, 4000 ); 
             FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH2, 0);
            }
 //          else
