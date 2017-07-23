@@ -21,18 +21,23 @@ void Servo_Control()
     uint16_t piancha1;
     
     //在程序第一次进入循环时设置初值
-    if(anglenow==0)foreangle=anglex;
-    
+    if(anglenow==0)
+	{
+		foreangle=anglex;
+	}    
     
    //kd作用是让舵机在变化的时候变化的更快，更快达到直线状态来进行加速
     
-   anglenow=anglex-Kd*(foreangle-anglex)/10;  
-     
-     
-     
-     if(anglenow<angleright)anglenow=angleright;
-     if(anglenow>angleleft)anglenow=angleleft;     
-     
+	anglenow=anglex-Kd*(foreangle-anglex)/10;  
+
+	if(anglenow<angleright)
+	{
+		anglenow=angleright;
+	}
+	if(anglenow>angleleft)
+	{
+		anglenow=angleleft;
+	}     
     
     //舵机打角只在这里实现
      CMT_PWM_ChangDuty (anglenow);
@@ -168,7 +173,7 @@ cha=speedx-avespeed;
                     
                 Kir= 1;
                 Kil= 1;
-                    
+                     
                 leftsum=800;
                 rightsum=800;
                 }
@@ -188,7 +193,7 @@ cha=speedx-avespeed;
                case 3://靠近信标进行信标避障
                 k1=1;   
                if(qd_left_value+qd_left_value>22)
-               { Kp= 1500;
+               { Kp= 2200;
                
                
                 Kir= 0;
@@ -266,7 +271,35 @@ cha=speedx-avespeed;
       pwm_out1 =   Kp*lefterror + Kil*leftsum  ;
 	  pwm_out2 =   Kp*righterror + Kir*rightsum   ;
 
-	  	
+	if(state==0)
+	{
+		if( anglex<anglemid)
+		{
+			if( pwm_out2>3000)pwm_out2=1000;
+		}
+		else
+		{
+			if( pwm_out1>3000)pwm_out1=1000;
+		}
+
+		if(turn[count1-1]==1)
+		{
+			if(qd_left_value<2)
+			{
+				FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,0);
+				FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,0);
+			}
+		}
+		if(turn[count1-1]==2)
+		{
+			if(qd_right_value<2)
+			{
+				FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH3, 0); 
+				FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH2, 0);
+			}
+		}
+
+	}	
 	  
 	     
          //防止值超过限度

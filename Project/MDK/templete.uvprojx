@@ -377,21 +377,6 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>startup</GroupName>
-          <Files>
-            <File>
-              <FileName>system_MK60D10.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Libraries\startup\DeviceSupport\system_MK60D10.c</FilePath>
-            </File>
-            <File>
-              <FileName>startup_MK60D10.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_MK60D10.s</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>user</GroupName>
           <Files>
             <File>
@@ -419,10 +404,20 @@
               <FileType>1</FileType>
               <FilePath>..\src\getready.c</FilePath>
             </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>startup</GroupName>
+          <Files>
             <File>
-              <FileName>getready.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\getready.h</FilePath>
+              <FileName>system_MK60D10.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Libraries\startup\DeviceSupport\system_MK60D10.c</FilePath>
+            </File>
+            <File>
+              <FileName>startup_MK60D10.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\..\Libraries\startup\DeviceSupport\MDK-ARM\startup_MK60D10.s</FilePath>
             </File>
           </Files>
         </Group>
@@ -565,19 +560,9 @@
               <FilePath>..\src\response.c</FilePath>
             </File>
             <File>
-              <FileName>head.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\head.h</FilePath>
-            </File>
-            <File>
               <FileName>pid.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\src\pid.c</FilePath>
-            </File>
-            <File>
-              <FileName>pid.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\pid.h</FilePath>
             </File>
             <File>
               <FileName>canshu.c</FileName>
@@ -585,19 +570,9 @@
               <FilePath>..\src\canshu.c</FilePath>
             </File>
             <File>
-              <FileName>canshu.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\canshu.h</FilePath>
-            </File>
-            <File>
               <FileName>qita.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\src\qita.c</FilePath>
-            </File>
-            <File>
-              <FileName>qita.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\src\qita.h</FilePath>
             </File>
           </Files>
         </Group>

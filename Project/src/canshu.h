@@ -5,6 +5,7 @@
 #include "stdint.h"
 #include "stdbool.h"
 
+#define SERVO_MIDDLE 768
 
 //改用变量的形式
 

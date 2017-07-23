@@ -18,6 +18,7 @@ extern uint8_t xinbiaobiaozhi;
  extern uint8_t bamakaiguan;
 extern uint16_t xinbiaoxiangsu;
 extern uint16_t xinbiao0[10];
+extern uint8_t laststate;
 void jiajiansujuli();//动态设置加减速距离
 
 void julican();
