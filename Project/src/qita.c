@@ -92,6 +92,24 @@ void speedset()
 
 switch(count1)
 {
+	case 6:
+	speedjiasu=     50;            //远离信标 直线加速  
+	speedxinjiansu= 2;        //靠近信标 进行减速    
+	speedxinjia=    2;          //靠近信标 速度太慢 而加速
+	speeddazhuan=   20;         //找不到信标大转弯速度    
+	speedbizhang=   2;          //避障减速    
+	speedxinbi1=     7;  
+	break;
+	
+	case 7:
+	speedjiasu=     58*SPEED_RATE;            //远离信标 直线加速  
+	speedxinjiansu= 20;        //靠近信标 进行减速    
+	speedxinjia=    28*SPEED_RATE;          //靠近信标 速度太慢 而加速
+	speeddazhuan=   20*SPEED_RATE;         //找不到信标大转弯速度    
+	speedbizhang=   2*SPEED_RATE;          //避障减速    
+	speedxinbi1=     7;   
+	break;
+	
 //         
 //               case 1:
 //    speedjiasu=     15;           //远离信标 直线加速  
@@ -208,7 +226,7 @@ void pass()
 	}
 	else
 	{
-		if(xinbiaoxiangsu<180)
+		if(xinbiaoxiangsu<200)		//180
 		{
 			count1++;
 			xidengshu++;

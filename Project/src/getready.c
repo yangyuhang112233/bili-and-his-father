@@ -196,19 +196,19 @@ void bamaswitch()
 		break;
 		
 		case  2://设置低速跑
-		speedzhuanwan=15;        //寻找信标转弯速度
-		speedjiasu=15;            //远离信标 直线加速
-		speedxinjiansu=15;        //靠近信标 进行减速
-		speedxinjia=15;          //靠近信标 速度太慢 而加速
-		speeddazhuan=15;         //找不到信标大转弯速度
-		speedbizhang=15;          //避障减速
-		speedxinbi1=15;            //信标避障减速
-		speedxinbi2=15;            //信标避障减速
+		speedzhuanwan=SPEED_LOW;        //寻找信标转弯速度
+		speedjiasu=SPEED_LOW;            //远离信标 直线加速
+		speedxinjiansu=SPEED_LOW;        //靠近信标 进行减速
+		speedxinjia=SPEED_LOW;          //靠近信标 速度太慢 而加速
+		speeddazhuan=SPEED_LOW;         //找不到信标大转弯速度
+		speedbizhang=SPEED_LOW;          //避障减速
+		speedxinbi1=SPEED_LOW;            //信标避障减速
+		speedxinbi2=SPEED_LOW;            //信标避障减速
 
-		speedxinjia2=    15;          //靠近信标 速度太慢 而加速
-		speedxinjiansu2= 15;        //靠近信标 进行减速
-		speedjiasu2=     15;            //远离信标 直线加速
-		speedxinbi2=     15;    
+		speedxinjia2=    SPEED_LOW;          //靠近信标 速度太慢 而加速
+		speedxinjiansu2= SPEED_LOW;        //靠近信标 进行减速
+		speedjiasu2=     SPEED_LOW;            //远离信标 直线加速
+		speedxinbi2=     SPEED_LOW;    
 
 		//speedxinbijia=15;          //信标避障时太慢，则加速                
 
@@ -257,6 +257,17 @@ void bamaswitch()
 		speedxinbi1=15;            //信标避障减速
 		speedxinbi2=15;            //信标避障减速
 		//speedxinbijia=15;          //信标避障时太慢，则加速  
+		break;
+		
+		case 6:
+			FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH1 ,0 );
+            FTM_PWM_ChangeDuty (HW_FTM0 ,HW_FTM_CH0 ,2000);  
+            FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH3, 1000); 
+            FTM_PWM_ChangeDuty (HW_FTM0, HW_FTM_CH2, 0);
+		while(1)
+		{
+		}
+
 		break;
 
 		default:break;    

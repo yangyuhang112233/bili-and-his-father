@@ -19,10 +19,10 @@ void lookfor()
 //信标避障后，设置大转弯打角       
 	if(forestate==3)
 	{
-		switch(turn_route[count11[3]]) 
+		switch(turn[count11[3]]) 
 		{
 			case 1:
-			anglex=angleleft; 
+			anglex=SERVO_MIDDLE-20; 
 			break;
 			
 			case 2:
