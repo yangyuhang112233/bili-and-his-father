@@ -27,7 +27,7 @@
 .\obj\main.o: ..\..\Libraries\fatfs\ff.h
 .\obj\main.o: ..\..\Libraries\fatfs\integer.h
 .\obj\main.o: ..\..\Libraries\fatfs\ffconf.h
-.\obj\main.o: ..\src\control.h
+.\obj\main.o: ..\src\bianmaqi.h
 .\obj\main.o: ..\src\getready.h
 .\obj\main.o: ..\..\Libraries\drivers\inc\wdog.h
 .\obj\main.o: ..\..\Libraries\drivers\inc\pit.h
@@ -45,3 +45,8 @@
 .\obj\main.o: ..\src\flag.h
 .\obj\main.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\main.o: ..\src\qita.h
+.\obj\main.o: ..\src\delay.h
+.\obj\main.o: ..\addsource\race.h
+.\obj\main.o: ..\addsource\key.h
+.\obj\main.o: ..\addsource\rtp.h
+.\obj\main.o: ..\addsource\carTest.h

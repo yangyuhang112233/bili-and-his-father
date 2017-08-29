@@ -14,7 +14,7 @@
 #include "img_processing.h"
 #include "Drv_LCD.h"
 #include "img_save.h"
-#include "control.h"
+#include "bianmaqi.h"
 #include "getready.h"
 #include "wdog.h"
 #include "pit.h"
@@ -33,4 +33,10 @@
 #include "flag.h"
 #include "string.h"
 #include "qita.h"
+#include "delay.h"
+#include "race.h"
+
+extern uint32_t mode_selection;
+extern uint32_t mode_data;
+
 #endif

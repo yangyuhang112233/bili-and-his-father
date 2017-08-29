@@ -335,7 +335,7 @@
               <MiscControls>--c99</MiscControls>
               <Define>MK60D10 RAVEN DEBUG</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libraries\devices\inc;..\..\Libraries\drivers\inc;..\..\Libraries\startup\CoreSupport;..\..\Libraries\startup\DeviceSupport\MDK-ARM;..\..\Libraries\startup\DeviceSupport;..\src;..\..\Libraries\fatfs;..\..\Libraries\fatfs\option</IncludePath>
+              <IncludePath>..\..\Libraries\devices\inc;..\..\Libraries\drivers\inc;..\..\Libraries\startup\CoreSupport;..\..\Libraries\startup\DeviceSupport\MDK-ARM;..\..\Libraries\startup\DeviceSupport;..\src;..\..\Libraries\fatfs;..\..\Libraries\fatfs\option;..\addsource</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -380,16 +380,6 @@
           <GroupName>user</GroupName>
           <Files>
             <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>control.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\control.c</FilePath>
-            </File>
-            <File>
               <FileName>img_processing.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\src\img_processing.c</FilePath>
@@ -399,10 +389,80 @@
               <FileType>1</FileType>
               <FilePath>..\src\ov7725_Init.c</FilePath>
             </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>function</GroupName>
+          <Files>
+            <File>
+              <FileName>canshu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\canshu.c</FilePath>
+            </File>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\main.c</FilePath>
+            </File>
             <File>
               <FileName>getready.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\src\getready.c</FilePath>
+            </File>
+            <File>
+              <FileName>flag.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\flag.c</FilePath>
+            </File>
+            <File>
+              <FileName>response.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\response.c</FilePath>
+            </File>
+            <File>
+              <FileName>move.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\move.c</FilePath>
+            </File>
+            <File>
+              <FileName>pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\pid.c</FilePath>
+            </File>
+            <File>
+              <FileName>qita.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\qita.c</FilePath>
+            </File>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\delay.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>addfunction</GroupName>
+          <Files>
+            <File>
+              <FileName>key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\addsource\key.c</FilePath>
+            </File>
+            <File>
+              <FileName>rtp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\addsource\rtp.c</FilePath>
+            </File>
+            <File>
+              <FileName>carTest.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\addsource\carTest.c</FilePath>
+            </File>
+            <File>
+              <FileName>race.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\addsource\race.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -500,6 +560,11 @@
           <GroupName>device</GroupName>
           <Files>
             <File>
+              <FileName>bianmaqi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\bianmaqi.c</FilePath>
+            </File>
+            <File>
               <FileName>Drv_LCD.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Libraries\devices\src\Drv_LCD.c</FilePath>
@@ -538,41 +603,6 @@
               <FileName>diskio.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Libraries\fatfs\diskio.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>control2</GroupName>
-          <Files>
-            <File>
-              <FileName>flag.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\flag.c</FilePath>
-            </File>
-            <File>
-              <FileName>move.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\move.c</FilePath>
-            </File>
-            <File>
-              <FileName>response.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\response.c</FilePath>
-            </File>
-            <File>
-              <FileName>pid.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\pid.c</FilePath>
-            </File>
-            <File>
-              <FileName>canshu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\canshu.c</FilePath>
-            </File>
-            <File>
-              <FileName>qita.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\qita.c</FilePath>
             </File>
           </Files>
         </Group>

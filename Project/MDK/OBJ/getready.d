@@ -27,7 +27,7 @@
 .\obj\getready.o: ..\..\Libraries\fatfs\ff.h
 .\obj\getready.o: ..\..\Libraries\fatfs\integer.h
 .\obj\getready.o: ..\..\Libraries\fatfs\ffconf.h
-.\obj\getready.o: ..\src\control.h
+.\obj\getready.o: ..\src\bianmaqi.h
 .\obj\getready.o: ..\src\getready.h
 .\obj\getready.o: ..\..\Libraries\drivers\inc\wdog.h
 .\obj\getready.o: ..\..\Libraries\drivers\inc\pit.h
@@ -45,3 +45,5 @@
 .\obj\getready.o: ..\src\flag.h
 .\obj\getready.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\getready.o: ..\src\qita.h
+.\obj\getready.o: ..\src\delay.h
+.\obj\getready.o: ..\addsource\race.h

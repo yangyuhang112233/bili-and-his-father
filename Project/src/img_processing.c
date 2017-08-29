@@ -151,11 +151,11 @@ if(jioushu==0)
     for(ii=0;ii<OV7620_H;ii++)
 			for(jj=0;jj<OV7620_W;jj++)
 			{                
-							if(CCD_Image[ii][jj]==0xff)
+				if(CCD_Image[ii][jj]==0xff)
 				CCD_Image[ii][jj]=0xfe;
-				UART_WriteByte(HW_UART0,CCD_Image[ii][jj]);
+				UART_WriteByte(HW_UART4,CCD_Image[ii][jj]);
 			}
-    UART_WriteByte(HW_UART0,0xff); 
+    UART_WriteByte(HW_UART4,0xff); 
 }
 else
 {
@@ -164,9 +164,9 @@ else
 			{                
 							if(CCD_Image22[ii][jj]==0xff)
 				CCD_Image22[ii][jj]=0xfe;
-				UART_WriteByte(HW_UART0,CCD_Image22[ii][jj]);
+				UART_WriteByte(HW_UART4,CCD_Image22[ii][jj]);
 			}
-    UART_WriteByte(HW_UART0,0xff); 
+    UART_WriteByte(HW_UART4,0xff); 
 }
 
 }

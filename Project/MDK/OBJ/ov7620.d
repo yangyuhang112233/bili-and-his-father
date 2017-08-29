@@ -27,7 +27,7 @@
 .\obj\ov7620.o: ..\..\Libraries\fatfs\ff.h
 .\obj\ov7620.o: ..\..\Libraries\fatfs\integer.h
 .\obj\ov7620.o: ..\..\Libraries\fatfs\ffconf.h
-.\obj\ov7620.o: ..\src\control.h
+.\obj\ov7620.o: ..\src\bianmaqi.h
 .\obj\ov7620.o: ..\src\getready.h
 .\obj\ov7620.o: ..\..\Libraries\drivers\inc\wdog.h
 .\obj\ov7620.o: ..\..\Libraries\drivers\inc\pit.h
@@ -45,3 +45,5 @@
 .\obj\ov7620.o: ..\src\flag.h
 .\obj\ov7620.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\ov7620.o: ..\src\qita.h
+.\obj\ov7620.o: ..\src\delay.h
+.\obj\ov7620.o: ..\addsource\race.h

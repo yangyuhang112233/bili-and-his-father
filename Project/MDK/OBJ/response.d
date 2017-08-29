@@ -27,7 +27,7 @@
 .\obj\response.o: ..\..\Libraries\fatfs\ff.h
 .\obj\response.o: ..\..\Libraries\fatfs\integer.h
 .\obj\response.o: ..\..\Libraries\fatfs\ffconf.h
-.\obj\response.o: ..\src\control.h
+.\obj\response.o: ..\src\bianmaqi.h
 .\obj\response.o: ..\src\getready.h
 .\obj\response.o: ..\..\Libraries\drivers\inc\wdog.h
 .\obj\response.o: ..\..\Libraries\drivers\inc\pit.h
@@ -45,3 +45,7 @@
 .\obj\response.o: ..\src\flag.h
 .\obj\response.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\response.o: ..\src\qita.h
+.\obj\response.o: ..\src\delay.h
+.\obj\response.o: ..\addsource\race.h
+.\obj\response.o: ..\addsource\rtp.h
+.\obj\response.o: ..\addsource\key.h

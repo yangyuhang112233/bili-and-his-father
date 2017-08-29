@@ -1,0 +1,52 @@
+.\obj\cartest.o: ..\addsource\carTest.c
+.\obj\cartest.o: ..\addsource\carTest.h
+.\obj\cartest.o: ..\src\head.h
+.\obj\cartest.o: ..\src\canshu.h
+.\obj\cartest.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\cartest.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\obj\cartest.o: ..\..\Libraries\drivers\inc\gpio.h
+.\obj\cartest.o: ..\..\Libraries\drivers\inc\common.h
+.\obj\cartest.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\obj\cartest.o: ..\..\Libraries\startup\DeviceSupport\MK60D10.h
+.\obj\cartest.o: ..\..\Libraries\startup\CoreSupport\core_cm4.h
+.\obj\cartest.o: ..\..\Libraries\startup\CoreSupport\core_cmInstr.h
+.\obj\cartest.o: ..\..\Libraries\startup\CoreSupport\core_cmFunc.h
+.\obj\cartest.o: ..\..\Libraries\startup\CoreSupport\core_cm4_simd.h
+.\obj\cartest.o: ..\..\Libraries\startup\DeviceSupport\system_MK60D10.h
+.\obj\cartest.o: ..\..\Libraries\drivers\inc\uart.h
+.\obj\cartest.o: ..\..\Libraries\drivers\inc\dma.h
+.\obj\cartest.o: ..\..\Libraries\drivers\inc\io2iic.h
+.\obj\cartest.o: ..\src\ov7620.h
+.\obj\cartest.o: ..\src\head.h
+.\obj\cartest.o: ..\..\Libraries\drivers\inc\ftm.h
+.\obj\cartest.o: ..\..\Libraries\drivers\inc\cmt.h
+.\obj\cartest.o: ..\..\Libraries\drivers\inc\adc.h
+.\obj\cartest.o: ..\..\Libraries\drivers\inc\lptmr.h
+.\obj\cartest.o: ..\src\img_processing.h
+.\obj\cartest.o: ..\..\Libraries\devices\inc\Drv_LCD.h
+.\obj\cartest.o: ..\src\img_save.h
+.\obj\cartest.o: ..\..\Libraries\fatfs\ff.h
+.\obj\cartest.o: ..\..\Libraries\fatfs\integer.h
+.\obj\cartest.o: ..\..\Libraries\fatfs\ffconf.h
+.\obj\cartest.o: ..\src\bianmaqi.h
+.\obj\cartest.o: ..\src\getready.h
+.\obj\cartest.o: ..\..\Libraries\drivers\inc\wdog.h
+.\obj\cartest.o: ..\..\Libraries\drivers\inc\pit.h
+.\obj\cartest.o: ..\..\Libraries\devices\inc\ov7725.h
+.\obj\cartest.o: ..\src\ov7725_Init.h
+.\obj\cartest.o: ..\src\ov7620_back.h
+.\obj\cartest.o: ..\..\Libraries\drivers\inc\sd.h
+.\obj\cartest.o: ..\src\Path_Plan_1.h
+.\obj\cartest.o: ..\src\Path_Plan_2.h
+.\obj\cartest.o: ..\src\Path_Plan_3.h
+.\obj\cartest.o: ..\src\Path_Plan_4.h
+.\obj\cartest.o: ..\src\move.h
+.\obj\cartest.o: ..\src\response.h
+.\obj\cartest.o: ..\src\pid.h
+.\obj\cartest.o: ..\src\flag.h
+.\obj\cartest.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\obj\cartest.o: ..\src\qita.h
+.\obj\cartest.o: ..\src\delay.h
+.\obj\cartest.o: ..\addsource\race.h
+.\obj\cartest.o: ..\addsource\rtp.h
+.\obj\cartest.o: ..\addsource\key.h

@@ -1,0 +1,49 @@
+.\obj\bianmaqi.o: ..\src\bianmaqi.c
+.\obj\bianmaqi.o: ..\src\head.h
+.\obj\bianmaqi.o: ..\src\canshu.h
+.\obj\bianmaqi.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\bianmaqi.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\obj\bianmaqi.o: ..\..\Libraries\drivers\inc\gpio.h
+.\obj\bianmaqi.o: ..\..\Libraries\drivers\inc\common.h
+.\obj\bianmaqi.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\obj\bianmaqi.o: ..\..\Libraries\startup\DeviceSupport\MK60D10.h
+.\obj\bianmaqi.o: ..\..\Libraries\startup\CoreSupport\core_cm4.h
+.\obj\bianmaqi.o: ..\..\Libraries\startup\CoreSupport\core_cmInstr.h
+.\obj\bianmaqi.o: ..\..\Libraries\startup\CoreSupport\core_cmFunc.h
+.\obj\bianmaqi.o: ..\..\Libraries\startup\CoreSupport\core_cm4_simd.h
+.\obj\bianmaqi.o: ..\..\Libraries\startup\DeviceSupport\system_MK60D10.h
+.\obj\bianmaqi.o: ..\..\Libraries\drivers\inc\uart.h
+.\obj\bianmaqi.o: ..\..\Libraries\drivers\inc\dma.h
+.\obj\bianmaqi.o: ..\..\Libraries\drivers\inc\io2iic.h
+.\obj\bianmaqi.o: ..\src\ov7620.h
+.\obj\bianmaqi.o: ..\src\head.h
+.\obj\bianmaqi.o: ..\..\Libraries\drivers\inc\ftm.h
+.\obj\bianmaqi.o: ..\..\Libraries\drivers\inc\cmt.h
+.\obj\bianmaqi.o: ..\..\Libraries\drivers\inc\adc.h
+.\obj\bianmaqi.o: ..\..\Libraries\drivers\inc\lptmr.h
+.\obj\bianmaqi.o: ..\src\img_processing.h
+.\obj\bianmaqi.o: ..\..\Libraries\devices\inc\Drv_LCD.h
+.\obj\bianmaqi.o: ..\src\img_save.h
+.\obj\bianmaqi.o: ..\..\Libraries\fatfs\ff.h
+.\obj\bianmaqi.o: ..\..\Libraries\fatfs\integer.h
+.\obj\bianmaqi.o: ..\..\Libraries\fatfs\ffconf.h
+.\obj\bianmaqi.o: ..\src\bianmaqi.h
+.\obj\bianmaqi.o: ..\src\getready.h
+.\obj\bianmaqi.o: ..\..\Libraries\drivers\inc\wdog.h
+.\obj\bianmaqi.o: ..\..\Libraries\drivers\inc\pit.h
+.\obj\bianmaqi.o: ..\..\Libraries\devices\inc\ov7725.h
+.\obj\bianmaqi.o: ..\src\ov7725_Init.h
+.\obj\bianmaqi.o: ..\src\ov7620_back.h
+.\obj\bianmaqi.o: ..\..\Libraries\drivers\inc\sd.h
+.\obj\bianmaqi.o: ..\src\Path_Plan_1.h
+.\obj\bianmaqi.o: ..\src\Path_Plan_2.h
+.\obj\bianmaqi.o: ..\src\Path_Plan_3.h
+.\obj\bianmaqi.o: ..\src\Path_Plan_4.h
+.\obj\bianmaqi.o: ..\src\move.h
+.\obj\bianmaqi.o: ..\src\response.h
+.\obj\bianmaqi.o: ..\src\pid.h
+.\obj\bianmaqi.o: ..\src\flag.h
+.\obj\bianmaqi.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\obj\bianmaqi.o: ..\src\qita.h
+.\obj\bianmaqi.o: ..\src\delay.h
+.\obj\bianmaqi.o: ..\addsource\race.h

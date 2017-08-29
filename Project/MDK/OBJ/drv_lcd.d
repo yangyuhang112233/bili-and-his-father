@@ -28,7 +28,7 @@
 .\obj\drv_lcd.o: ..\..\Libraries\fatfs\ff.h
 .\obj\drv_lcd.o: ..\..\Libraries\fatfs\integer.h
 .\obj\drv_lcd.o: ..\..\Libraries\fatfs\ffconf.h
-.\obj\drv_lcd.o: ..\src\control.h
+.\obj\drv_lcd.o: ..\src\bianmaqi.h
 .\obj\drv_lcd.o: ..\src\getready.h
 .\obj\drv_lcd.o: ..\..\Libraries\drivers\inc\wdog.h
 .\obj\drv_lcd.o: ..\..\Libraries\drivers\inc\pit.h
@@ -46,6 +46,8 @@
 .\obj\drv_lcd.o: ..\src\flag.h
 .\obj\drv_lcd.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\drv_lcd.o: ..\src\qita.h
+.\obj\drv_lcd.o: ..\src\delay.h
+.\obj\drv_lcd.o: ..\addsource\race.h
 .\obj\drv_lcd.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 .\obj\drv_lcd.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\obj\drv_lcd.o: ..\..\Libraries\devices\inc\SimSun6x12.h

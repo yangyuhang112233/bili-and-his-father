@@ -27,7 +27,7 @@
 .\obj\canshu.o: ..\..\Libraries\fatfs\ff.h
 .\obj\canshu.o: ..\..\Libraries\fatfs\integer.h
 .\obj\canshu.o: ..\..\Libraries\fatfs\ffconf.h
-.\obj\canshu.o: ..\src\control.h
+.\obj\canshu.o: ..\src\bianmaqi.h
 .\obj\canshu.o: ..\src\getready.h
 .\obj\canshu.o: ..\..\Libraries\drivers\inc\wdog.h
 .\obj\canshu.o: ..\..\Libraries\drivers\inc\pit.h
@@ -45,3 +45,5 @@
 .\obj\canshu.o: ..\src\flag.h
 .\obj\canshu.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\canshu.o: ..\src\qita.h
+.\obj\canshu.o: ..\src\delay.h
+.\obj\canshu.o: ..\addsource\race.h

@@ -7,10 +7,7 @@
 #include <string.h>
 #include <stdio.h>
 #include "SimSun6x12.h"
-#include "control.h"
-
-
-    
+   
 extern volatile uint8_t left[2][120],right[2][120];
 
 bool display_on_LCD = 1;

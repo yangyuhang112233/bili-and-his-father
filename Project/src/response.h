@@ -6,7 +6,6 @@
 extern uint16_t deviation;//偏差
 extern uint8_t lookcount;
 void bizhang(void);//避障函数
-void pointbizhang(void);//信标避障
  
 void gothere(void);//前往信标位置
 void lookfor(void);//看不到信标的时候寻找信标

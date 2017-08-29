@@ -27,7 +27,7 @@
 .\obj\img_processing.o: ..\..\Libraries\fatfs\ff.h
 .\obj\img_processing.o: ..\..\Libraries\fatfs\integer.h
 .\obj\img_processing.o: ..\..\Libraries\fatfs\ffconf.h
-.\obj\img_processing.o: ..\src\control.h
+.\obj\img_processing.o: ..\src\bianmaqi.h
 .\obj\img_processing.o: ..\src\getready.h
 .\obj\img_processing.o: ..\..\Libraries\drivers\inc\wdog.h
 .\obj\img_processing.o: ..\..\Libraries\drivers\inc\pit.h
@@ -45,3 +45,5 @@
 .\obj\img_processing.o: ..\src\flag.h
 .\obj\img_processing.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\obj\img_processing.o: ..\src\qita.h
+.\obj\img_processing.o: ..\src\delay.h
+.\obj\img_processing.o: ..\addsource\race.h

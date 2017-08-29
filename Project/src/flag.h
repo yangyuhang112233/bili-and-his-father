@@ -3,8 +3,10 @@
 
 #include "stdint.h"
 #include "stdbool.h"
+
+
 extern uint16_t countbz7620;
-extern bool barrier2;
+extern bool barrier;
 void findpoint(void);//找信标函数
 void findbarrier(void);//判断前方是否有障碍物
 extern uint8_t juli;
