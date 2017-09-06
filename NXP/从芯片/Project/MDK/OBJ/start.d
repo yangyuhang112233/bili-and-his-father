@@ -1,0 +1,13 @@
+.\obj\start.o: ..\src\start.c
+.\obj\start.o: ..\src\start.h
+.\obj\start.o: D:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\start.o: ..\..\Libraries\drivers\inc\common.h
+.\obj\start.o: D:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\obj\start.o: D:\Keil\ARM\ARMCC\bin\..\include\stddef.h
+.\obj\start.o: ..\..\Libraries\startup\DeviceSupport\MK60D10.h
+.\obj\start.o: ..\..\Libraries\startup\CoreSupport\core_cm4.h
+.\obj\start.o: ..\..\Libraries\startup\CoreSupport\core_cmInstr.h
+.\obj\start.o: ..\..\Libraries\startup\CoreSupport\core_cmFunc.h
+.\obj\start.o: ..\..\Libraries\startup\CoreSupport\core_cm4_simd.h
+.\obj\start.o: ..\..\Libraries\startup\DeviceSupport\system_MK60D10.h
+.\obj\start.o: ..\src\control.h
